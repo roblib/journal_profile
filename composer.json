@@ -1,5 +1,5 @@
 {
-      "name": "Journal",
+      "name": "islandora-rdm/ournal-profile",
       "description": "Profile to represent scholarly content in Drupal.",
       "type": "drupal-profile",
       "license": "GPLv2",
