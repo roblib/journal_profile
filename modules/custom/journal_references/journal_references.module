@@ -1,0 +1,29 @@
+<?php
+
+
+function journal_references_modules_installed(array $modules)
+{
+  // Don't do anything during config sync.
+  if (\Drupal::isConfigSyncing()) {
+    return;
+  }
+
+  if (in_array('lightning_roles', $modules)) {
+    foreach(['creator', 'reviewer'] as $role_type) {
+      \Drupal::service('lightning.content_roles')
+        ->grantPermissions($role_type, [
+          'use text format rich_text_references',
+          'create bibcite_reference',
+          'create bibcite_contributor',
+          'create bibcite_keyword',
+          'delete own bibcite_keyword',
+          'edit own bibcite_keyword',
+          'delete own bibcite_reference',
+          'edit own bibcite_reference',
+          'view bibcite_reference',
+          'view bibcite_keyword',
+          'view bibcite_contributor',
+        ]);
+    }
+  }
+}

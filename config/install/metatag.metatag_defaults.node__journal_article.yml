@@ -1,0 +1,28 @@
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 3HKaUPhjQOYRWOt1XaDwJioKEC5vKHGvugzqlpBx1Rw
+id: node__journal_article
+label: 'Content: Article'
+tags:
+  image_src: '[node:field_article_highlight_image:entity:image:entity:url]'
+  dcterms_identifier: '[node:field_doi]'
+  dcterms_title: '[node:title]'
+  dcterms_contributor: '[node:field_authors_and_affiliations:entity:field_affiliation_contributor]'
+  dcterms_publisher: '[node:field_part_of:entity:field_part_of:entity:field_journal_publisher]'
+  dcterms_date: '[node:created:html_datetime]'
+  dcterms_description: '[node:field_journal_article_abstract]'
+  dcterms_language: '[node:langcode]'
+  dcterms_creator: '[node:field_authors_and_affiliations:0:entity:field_affiliation_contributor:0]'
+  dcterms_format: text/html
+  dcterms_subject: '[node:field_article_subjects]'
+  dcterms_is_part_of: '[node:field_part_of:entity:url]'
+  dcterms_abstract: '[node:field_journal_article_abstract]'
+  citation_title: '[node:title]'
+  citation_journal_title: '[node:field_part_of:entity:field_part_of:entity:title]'
+  citation_issue: '[node:field_part_of:entity:field_issue_number]'
+  citation_volume: '[node:field_part_of:entity:field_issue_volume]'
+  citation_issn: '[node:field_part_of:entity:field_part_of:entity:field_journal_eissn]'
+  citation_publication_date: '[node:created:html_datetime]'
+  citation_author: '[node:field_authors_and_affiliations:entity:field_affiliation_contributor]'

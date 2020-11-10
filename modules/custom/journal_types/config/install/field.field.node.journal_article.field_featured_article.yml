@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_featured_article
+    - node.type.journal_article
+id: node.journal_article.field_featured_article
+field_name: field_featured_article
+entity_type: node
+bundle: journal_article
+label: 'Featured Article'
+description: 'Add this article to the landing pages slideshow'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean

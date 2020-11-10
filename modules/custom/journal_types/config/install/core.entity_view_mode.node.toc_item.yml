@@ -1,0 +1,15 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - lightning_core
+    - node
+third_party_settings:
+  lightning_core:
+    description: 'List item for display in a table of contents.'
+_core:
+  default_config_hash: sn_YJ4NAoimYJOfgY9Kb8ExLddX8643a4avjI-WC1fc
+id: node.toc_item
+label: 'ToC Item'
+targetEntityType: node
+cache: true

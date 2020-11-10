@@ -1,0 +1,8 @@
+name: 'Journal News'
+type: module
+description: 'Content types for non-scholarly content'
+core: 8.x
+package: 'Journal'
+dependencies:
+  - journal_types
+

@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_journal_for_authors
+    - node.type.journal
+  module:
+    - text
+id: node.journal.field_journal_for_authors
+field_name: field_journal_for_authors
+entity_type: node
+bundle: journal
+label: 'Information For Authors'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: "<p>Interested in submitting to this journal? We recommend that you review the About the Journal page for the journal's section policies, as well as the Author Guidelines. Authors need to register with the journal prior to submitting or, if already registered, can simply log in and begin the five-step process.</p>\r\n"
+    format: rich_text
+default_value_callback: ''
+settings: {  }
+field_type: text_long

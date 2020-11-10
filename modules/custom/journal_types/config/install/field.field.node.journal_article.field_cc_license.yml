@@ -1,0 +1,31 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_cc_license
+    - node.type.journal_article
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    html: html
+    rich_text_references: '0'
+    links_only: '0'
+    rich_text: '0'
+    plain_text: '0'
+id: node.journal_article.field_cc_license
+field_name: field_cc_license
+entity_type: node
+bundle: journal_article
+label: 'CC License'
+description: 'this is the Creative Commons License and icon applied to all article content published in the journal. A default value is applied given the requirements of the journal.'
+required: false
+translatable: false
+default_value:
+  -
+    value: "<p>&lt;a rel=\"license\" href=\"http://creativecommons.org/licenses/by/4.0/\"&gt;&lt;img alt=\"Creative Commons License\" style=\"border-width:0\" src=\"https://i.creativecommons.org/l/by/4.0/80x15.png\" /&gt;&lt;/a&gt;&lt;br /&gt;This work is licensed under a &lt;a rel=\"license\" href=\"http://creativecommons.org/licenses/by/4.0/\"&gt;Creative Commons Attribution 4.0 International License&lt;/a&gt;.</p>\r\n"
+    format: html
+default_value_callback: ''
+settings: {  }
+field_type: text_long

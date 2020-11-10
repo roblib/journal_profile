@@ -1,0 +1,36 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_part_of
+    - node.type.issue
+    - node.type.journal
+  module:
+    - entity_hierarchy
+    - require_on_publish
+third_party_settings:
+  require_on_publish:
+    require_on_publish: true
+id: node.issue.field_part_of
+field_name: field_part_of
+entity_type: node
+bundle: issue
+label: Journal
+description: 'Defines the hierarchical structure of the content between journals, Issues and articles'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      journal: journal
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+  weight_min: 0
+  weight_max: 50
+  weight_label: Order
+field_type: entity_reference_hierarchy

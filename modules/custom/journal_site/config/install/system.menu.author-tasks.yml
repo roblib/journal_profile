@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: author-tasks
+label: 'Author tasks'
+description: 'Tasks for article authors'
+locked: false

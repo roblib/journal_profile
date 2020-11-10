@@ -1,0 +1,29 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_article_subtitle
+    - node.type.journal_article
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    plain_text: plain_text
+    rich_text_references: '0'
+    links_only: '0'
+    rich_text: '0'
+_core:
+  default_config_hash: B9gw6gWn7xEAEJNodFjonXnsut88oA3Al74ewtlhiag
+id: node.journal_article.field_article_subtitle
+field_name: field_article_subtitle
+entity_type: node
+bundle: journal_article
+label: Subtitle
+description: 'The optional subtitle will appear after a colon (:), following the main title.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

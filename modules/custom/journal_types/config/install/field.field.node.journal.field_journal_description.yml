@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_journal_description
+    - node.type.journal
+  module:
+    - text
+id: node.journal.field_journal_description
+field_name: field_journal_description
+entity_type: node
+bundle: journal
+label: 'Journal Description'
+description: 'A brief description of the journal that will appear in lists of journals'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

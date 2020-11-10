@@ -1,0 +1,25 @@
+name: 'Journal Types'
+type: module
+description: 'Content types for scholarly content'
+core: 8.x
+package: 'Journal'
+dependencies:
+  - address
+  - allowed_formats
+  - comment
+  - entity_hierarchy
+  - field_group
+  - field_permissions
+  - inline_entity_form
+  - media
+  - name
+  - panelizer
+  - entity_browser
+  - lightning_media
+  - lightning_media_image
+  - journal_references
+  - paragraphs
+  - pathauto
+  - require_on_publish
+
+

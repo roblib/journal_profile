@@ -1,0 +1,25 @@
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: HAWGbhacNu42B8eiIHXmi2mIB6FzFf6cuzhS7lbE9sk
+id: node__issue
+label: 'Content: Issue'
+tags:
+  description: '[node:body]'
+  image_src: '[node:field_issue_cover:entity:url]'
+  abstract: '[node:body]'
+  dcterms_title: '[node:title]'
+  dcterms_type: Text
+  dcterms_publisher: '[node:field_part_of:entity:field_journal_publisher]'
+  dcterms_description: '[node:body]'
+  dcterms_coverage: '[node:langcode]'
+  dcterms_format: text/html
+  dcterms_modified: '[node:changed:html_datetime]'
+  dcterms_abstract: '[node:body]'
+  citation_title: '[node:title]'
+  citation_journal_title: '[node:field_part_of:entity:title]'
+  citation_issue: '[node:field_issue_number]'
+  citation_volume: '[node:field_issue_volume:entity:field_volume_number]'
+  citation_issn: '[node:field_part_of:entity:field_journal_eissn]'
+  citation_publication_date: '[node:field_publication_date:html_datetime]'

@@ -1,0 +1,29 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_issue_number
+    - node.type.issue
+  module:
+    - require_on_publish
+third_party_settings:
+  require_on_publish:
+    require_on_publish: false
+_core:
+  default_config_hash: YZupW8Hde9iQTi_bP-MQPLXsQfYrIyuW2_Oe3T0Hjvs
+id: node.issue.field_issue_number
+field_name: field_issue_number
+entity_type: node
+bundle: issue
+label: Number
+description: 'Journal number. Must be an integer.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

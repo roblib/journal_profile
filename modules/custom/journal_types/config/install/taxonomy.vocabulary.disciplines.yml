@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+name: Disciplines
+vid: disciplines
+description: 'Disciplines for article submissions'
+hierarchy: 0
+weight: 0

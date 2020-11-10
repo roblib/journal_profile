@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains journal_cite_this.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function journal_cite_this_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the journal_cite_this module.
+    case 'help.page.journal_cite_this':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Cite an article using the Bibcite export formats.') . '</p>';
+      return $output;
+
+    default:
+  }
+}

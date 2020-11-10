@@ -1,0 +1,338 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - entity_browser.browser.media_browser
+    - field.field.node.journal_article.body
+    - field.field.node.journal_article.field_article_dc_rights
+    - field.field.node.journal_article.field_article_dc_source
+    - field.field.node.journal_article.field_article_disciplines
+    - field.field.node.journal_article.field_article_editor_comments
+    - field.field.node.journal_article.field_article_highlight_image
+    - field.field.node.journal_article.field_part_of
+    - field.field.node.journal_article.field_article_peer_reviewed
+    - field.field.node.journal_article.field_article_section
+    - field.field.node.journal_article.field_article_subjects
+    - field.field.node.journal_article.field_article_submission_files
+    - field.field.node.journal_article.field_article_subtitle
+    - field.field.node.journal_article.field_article_type
+    - field.field.node.journal_article.field_authors_and_affiliations
+    - field.field.node.journal_article.field_cc_license
+    - field.field.node.journal_article.field_doi
+    - field.field.node.journal_article.field_editorial_comments
+    - field.field.node.journal_article.field_featured_article
+    - field.field.node.journal_article.field_journal_article_abstract
+    - field.field.node.journal_article.field_journal_article_keywords
+    - field.field.node.journal_article.field_part_of
+    - field.field.node.journal_article.field_publication_date_electroni
+    - field.field.node.journal_article.field_works_cited
+    - node.type.journal_article
+  module:
+    - content_moderation
+    - datetime
+    - entity_browser
+    - entity_hierarchy
+    - field_group
+    - file
+    - inline_entity_form
+    - paragraphs
+    - path
+    - text
+third_party_settings:
+  field_group:
+    group_submission_metadata:
+      children:
+        - field_article_dc_source
+        - field_article_dc_rights
+      parent_name: group_technical_metadata
+      weight: 3
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: article-submission-metadata-fieldset
+        description: 'These specifications are based on the Dublin Core metadata set, an international standard used to describe journal content.'
+        required_fields: true
+      label: 'Submission Metadata'
+    group_additional_refinements:
+      children:
+        - field_article_subjects
+        - field_article_disciplines
+        - field_journal_article_keywords
+      parent_name: group_technical_metadata
+      weight: 4
+      format_type: fieldset
+      format_settings:
+        id: article-submission-additional-refinements-fieldset
+        classes: ''
+        description: ''
+        required_fields: true
+      label: 'Additional Refinements'
+    group_article_info:
+      children:
+        - group_article_content
+        - group_article_contributors
+        - group_technical_metadata
+        - group_publication_state
+      parent_name: ''
+      weight: 0
+      format_type: tabs
+      format_settings:
+        id: journal-article-info-form-tabs
+        classes: ''
+        direction: vertical
+      label: 'Article Info'
+    group_article_content:
+      children:
+        - title
+        - field_article_subtitle
+        - field_journal_article_abstract
+        - body
+        - field_works_cited
+        - field_article_highlight_image
+        - field_article_submission_files
+      parent_name: group_article_info
+      weight: 20
+      format_type: tab
+      format_settings:
+        id: journal-article-content-form-tab
+        classes: ''
+        formatter: open
+        description: 'Abstract and article main body content'
+        required_fields: true
+      label: 'Article Content'
+    group_publication_state:
+      children:
+        - field_part_of
+        - moderation_state
+        - field_article_section
+        - status
+        - field_publication_date_electroni
+        - path
+        - field_article_peer_reviewed
+      parent_name: group_article_info
+      weight: 23
+      format_type: tab
+      format_settings:
+        id: journal-article-publication-state-form
+        classes: ''
+        formatter: closed
+        description: 'Article publication info and state'
+        required_fields: true
+      label: 'Publication State'
+    group_technical_metadata:
+      children:
+        - field_article_editor_comments
+        - group_submission_metadata
+        - group_additional_refinements
+      parent_name: group_article_info
+      weight: 22
+      format_type: tab
+      format_settings:
+        id: journal-article-technical-metadata-tab-form
+        classes: ''
+        formatter: closed
+        description: 'Additional data to help categorize the article and make it indexable by search engines and aggregators.'
+        required_fields: true
+      label: 'Technical Metadata'
+    group_article_contributors:
+      children:
+        - field_authors_and_affiliations
+      parent_name: group_article_info
+      weight: 21
+      format_type: tab
+      format_settings:
+        id: journal-article-contributors-form-tab
+        classes: ''
+        formatter: closed
+        description: 'Add all of the article''s contributors'
+        required_fields: true
+      label: 'Article Contributors'
+_core:
+  default_config_hash: vSmxCbu2Kv7RqPlDZT5VaXpVB7Zh6hjQNKNvw7ECU74
+id: node.journal_article.default
+targetEntityType: node
+bundle: journal_article
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 3
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  field_article_dc_rights:
+    weight: 128
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_article_dc_source:
+    weight: 127
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_article_disciplines:
+    weight: 130
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_article_editor_comments:
+    weight: 2
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_article_highlight_image:
+    type: entity_browser_entity_reference
+    weight: 5
+    settings:
+      entity_browser: media_browser
+      field_widget_display: rendered_entity
+      field_widget_edit: true
+      field_widget_remove: true
+      selection_mode: selection_append
+      field_widget_display_settings:
+        view_mode: thumbnail
+      open: true
+    region: content
+    third_party_settings: {  }
+  field_article_peer_reviewed:
+    weight: 239
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_article_section:
+    weight: 235
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_article_subjects:
+    weight: 129
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_article_submission_files:
+    weight: 6
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_generic
+    region: content
+  field_article_subtitle:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textfield
+    region: content
+  field_authors_and_affiliations:
+    type: entity_reference_paragraphs
+    weight: 0
+    region: content
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+  field_journal_article_abstract:
+    weight: 2
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_journal_article_keywords:
+    weight: 131
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_part_of:
+    weight: 233
+    settings: {  }
+    third_party_settings: {  }
+    type: entity_reference_hierarchy_select
+    region: content
+  field_publication_date_electroni:
+    weight: 237
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_works_cited:
+    weight: 4
+    settings:
+      form_mode: default
+      label_singular: ''
+      label_plural: ''
+      collapsible: true
+      allow_new: true
+      allow_existing: true
+      match_operator: CONTAINS
+      override_labels: false
+      collapsed: false
+      allow_duplicate: false
+    third_party_settings: {  }
+    type: inline_entity_form_complex
+    region: content
+  moderation_state:
+    type: moderation_state_default
+    weight: 234
+    settings: {  }
+    region: content
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 238
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 236
+    region: content
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  field_part_of: true
+  field_article_type: true
+  field_cc_license: true
+  field_doi: true
+  field_editorial_comments: true
+  field_featured_article: true
+  promote: true
+  sticky: true
+  uid: true

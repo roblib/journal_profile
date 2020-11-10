@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: issue
+label: Issue
+type: 'canonical_entities:node'
+pattern: '[node:field_issue_number]'
+selection_criteria:
+  02edb00c-6044-443d-a4e3-168ca5a9287c:
+    id: node_type
+    bundles:
+      issue: issue
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 02edb00c-6044-443d-a4e3-168ca5a9287c
+selection_logic: and
+weight: -5
+relationships: {  }

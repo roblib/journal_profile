@@ -1,0 +1,30 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_authors_and_affiliations
+    - node.type.journal_article
+    - paragraphs.paragraphs_type.author_with_affiliation
+  module:
+    - entity_reference_revisions
+id: node.journal_article.field_authors_and_affiliations
+field_name: field_authors_and_affiliations
+entity_type: node
+bundle: journal_article
+label: 'Authors and affiliations'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      author_with_affiliation: author_with_affiliation
+    target_bundles_drag_drop:
+      author_with_affiliation:
+        enabled: true
+        weight: 2
+field_type: entity_reference_revisions

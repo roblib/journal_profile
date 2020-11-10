@@ -1,0 +1,28 @@
+<?php
+
+use Drupal\user\Entity\Role;
+
+/**
+ * Implementation of hook_modules_installed().
+ *
+ * Delete some of the Lightning-created per-content-type roles.
+ *
+ * @param array $modules
+ */
+function journal_editorial_modules_installed(array $modules) {
+  $roles = Role::loadMultiple(
+    [
+      "page_reviewer",
+      "page_reviewer",
+      "page_creator",
+      "media_creator",
+      "media_manager",
+      "landing_page_creator",
+      "landing_page_reviewer",
+      "layout_manager",
+    ]);
+
+  foreach ($roles as $role) {
+    $role->delete();
+  }
+}

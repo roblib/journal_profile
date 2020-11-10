@@ -1,0 +1,46 @@
+name: 'Journal'
+type: profile
+description: 'Content types and workflows for scholarly content.'
+core_version_requirement: '^8.0 || ^9'
+'base profile': lightning
+exclude:
+  - lightning_roles
+install:
+  - address
+  - field_group
+  - field_permissions
+  - panelizer
+  - views
+  - views_entity_form_field
+  - media
+  - entity_browser
+  - menu_ui
+  - lightning_media
+  - embed
+  - bibcite
+  - bibcite_bibtex
+  - bibcite_ris
+  - bibcite_import
+  - bibcite_endnote
+  - bibcite_marc
+  - bibcite_entity
+  - journal_types
+  - journal_cite_this
+  - journal_news
+  - journal_editorial
+  - journal_peer_review
+  - journal_references
+  - journal_site
+  - metatag
+  - metatag_dc
+  - metatag_dc_advanced
+  - metatag_google_scholar
+base profile: lightning
+exclude:
+  - lightning_roles
+  - lightning_dev
+  - lightning_workflow
+  - lightning_scheduler
+themes:
+  - bartik
+  - seven

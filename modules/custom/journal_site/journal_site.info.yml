@@ -1,0 +1,13 @@
+name: 'Journal Site'
+type: module
+description: 'Site-wide configurations for the journal profile'
+core: 8.x
+package: 'Journal'
+dependencies:
+  - journal_references
+  - journal_types
+  - bibcite_entity
+  - bibcite_import
+  - toc_filter
+
+

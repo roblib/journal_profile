@@ -1,0 +1,15 @@
+
+journal_cite_this.journal_export_controller_export:
+  path: '/journal_cite_this/export/{bibcite_format}/{entity_type}/{entity}'
+  defaults:
+    _controller: '\Drupal\journal_cite_this\Controller\JournalExportController::export'
+    _title: 'export'
+  requirements:
+    _permission: 'access content'
+  options:
+    parameters:
+      bibcite_format:
+        type: bibcite_format
+      entity:
+        type: entity:{entity_type}
+

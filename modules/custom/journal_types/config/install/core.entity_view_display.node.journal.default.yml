@@ -1,0 +1,575 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.journal.field_journal_abbrev
+    - field.field.node.journal.field_journal_about_this
+    - field.field.node.journal.field_journal_author_guidelines
+    - field.field.node.journal.field_journal_description
+    - field.field.node.journal.field_journal_eissn
+    - field.field.node.journal.field_journal_for_authors
+    - field.field.node.journal.field_journal_for_librarins
+    - field.field.node.journal.field_journal_for_readers
+    - field.field.node.journal.field_journal_initials
+    - field.field.node.journal.field_journal_issn_print
+    - field.field.node.journal.field_journal_logo
+    - field.field.node.journal.field_journal_mailing_address
+    - field.field.node.journal.field_journal_main_image
+    - field.field.node.journal.field_journal_principal_contact
+    - field.field.node.journal.field_journal_publisher
+    - field.field.node.journal.field_journal_technical_support_
+    - node.type.journal
+  module:
+    - address
+    - field_group
+    - image
+    - panelizer
+    - text
+    - user
+third_party_settings:
+  panelizer:
+    enable: false
+    custom: false
+    allow: false
+    default: journal_default_display
+    displays:
+      default:
+        blocks:
+          0dff327d-c815-4cb4-aab7-a32642769b8c:
+            id: 'entity_field:node:uid'
+            label: 'Authored by'
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: hidden
+              type: author
+              settings: {  }
+              third_party_settings: {  }
+              weight: 0
+              region: content
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            region: content
+            weight: 0
+            uuid: 0dff327d-c815-4cb4-aab7-a32642769b8c
+          dba7a1c5-8646-4273-893e-73875bdea335:
+            id: 'entity_field:node:created'
+            label: 'Authored on'
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: hidden
+              type: timestamp
+              settings:
+                date_format: medium
+                custom_date_format: ''
+                timezone: ''
+              third_party_settings: {  }
+              weight: 0
+              region: content
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            region: content
+            weight: 0
+            uuid: dba7a1c5-8646-4273-893e-73875bdea335
+          abff0d77-b79e-474d-8531-9d278237848c:
+            id: 'entity_field:node:field_journal_abbrev'
+            label: 'Journal Abbreviated Name'
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: above
+              type: string
+              settings:
+                link_to_entity: false
+              third_party_settings: {  }
+              weight: 0
+              region: content
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            region: content
+            weight: 24
+            uuid: abff0d77-b79e-474d-8531-9d278237848c
+          680abf92-9ddb-41b9-9272-7ac9915b0661:
+            id: 'entity_field:node:field_journal_about_this'
+            label: 'About this Journal'
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: above
+              type: text_default
+              settings: {  }
+              third_party_settings: {  }
+              weight: 0
+              region: content
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            region: content
+            weight: 25
+            uuid: 680abf92-9ddb-41b9-9272-7ac9915b0661
+          30c3739f-a2d9-46b5-a940-cff7df995dac:
+            id: 'entity_field:node:field_journal_author_guidelines'
+            label: 'Author Guidelines'
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: above
+              type: text_default
+              settings: {  }
+              third_party_settings: {  }
+              weight: 0
+              region: content
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            region: content
+            weight: 2
+            uuid: 30c3739f-a2d9-46b5-a940-cff7df995dac
+          54a774c3-0cd1-43d4-b9f8-abbf984ffcbb:
+            id: 'entity_field:node:field_journal_eissn'
+            label: 'ISSN (Electronic)'
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: above
+              type: string
+              settings:
+                link_to_entity: false
+              third_party_settings: {  }
+              weight: 0
+              region: content
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            region: content
+            weight: 27
+            uuid: 54a774c3-0cd1-43d4-b9f8-abbf984ffcbb
+          232cdc13-05eb-4191-bd30-031314aa7351:
+            id: 'entity_field:node:field_journal_for_authors'
+            label: 'Information For Authors'
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: above
+              type: text_default
+              settings: {  }
+              third_party_settings: {  }
+              weight: 0
+              region: content
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            region: content
+            weight: 1
+            uuid: 232cdc13-05eb-4191-bd30-031314aa7351
+          8e098c42-8295-412e-9473-d1fae14cb475:
+            id: 'entity_field:node:field_journal_for_librarins'
+            label: 'Information For Librarians'
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: above
+              type: text_default
+              settings: {  }
+              third_party_settings: {  }
+              weight: 0
+              region: content
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            region: content
+            weight: 30
+            uuid: 8e098c42-8295-412e-9473-d1fae14cb475
+          268d64a4-9305-46b0-ac9b-fd7999c96407:
+            id: 'entity_field:node:field_journal_for_readers'
+            label: 'Information For Readers'
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: above
+              type: text_default
+              settings: {  }
+              third_party_settings: {  }
+              weight: 0
+              region: content
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            region: content
+            weight: 12
+            uuid: 268d64a4-9305-46b0-ac9b-fd7999c96407
+          abffe9c9-9eba-445e-a396-37a48fdfc5ae:
+            id: 'entity_field:node:field_journal_issn_print'
+            label: 'ISSN (Print)'
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: above
+              type: string
+              settings:
+                link_to_entity: false
+              third_party_settings: {  }
+              weight: 0
+              region: content
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            region: content
+            weight: 28
+            uuid: abffe9c9-9eba-445e-a396-37a48fdfc5ae
+          ecbbf9fc-d969-45a4-ad10-70adebf961be:
+            id: 'entity_field:node:field_journal_logo'
+            label: 'Journal Logo'
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: above
+              type: image
+              settings:
+                image_style: thumbnail
+                image_link: ''
+              third_party_settings: {  }
+              weight: 0
+              region: content
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            region: content
+            weight: 0
+            uuid: ecbbf9fc-d969-45a4-ad10-70adebf961be
+          8dcb5a67-383e-489a-948f-0c78580be1d3:
+            id: 'entity_field:node:field_journal_mailing_address'
+            label: 'Journal Mailing Address'
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: above
+              type: address_default
+              settings: {  }
+              third_party_settings: {  }
+              weight: 0
+              region: content
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            region: content
+            weight: 34
+            uuid: 8dcb5a67-383e-489a-948f-0c78580be1d3
+          d27c0bf9-35f6-435c-8d4c-faa5791a0429:
+            id: 'entity_field:node:field_journal_main_image'
+            label: 'Journal Main Image'
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: above
+              type: image
+              settings:
+                image_style: ''
+                image_link: ''
+              third_party_settings: {  }
+              weight: 0
+              region: content
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            region: content
+            weight: 29
+            uuid: d27c0bf9-35f6-435c-8d4c-faa5791a0429
+          8fb2479e-5758-4954-8575-090c7c805bfe:
+            id: 'entity_field:node:field_journal_principal_contact'
+            label: 'Journal Principal Contact'
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: above
+              type: entity_reference_label
+              settings:
+                link: true
+              third_party_settings: {  }
+              weight: 0
+              region: content
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            region: content
+            weight: 35
+            uuid: 8fb2479e-5758-4954-8575-090c7c805bfe
+          4cc0139b-20e9-46e4-beff-105fcf655dc4:
+            id: 'entity_field:node:field_journal_publisher'
+            label: 'Journal Publisher'
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: above
+              type: string
+              settings:
+                link_to_entity: false
+              third_party_settings: {  }
+              weight: 0
+              region: content
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            region: content
+            weight: 26
+            uuid: 4cc0139b-20e9-46e4-beff-105fcf655dc4
+          207ae181-b5c8-412f-8892-5a717d873b03:
+            id: 'entity_field:node:field_journal_technical_support_'
+            label: 'Journal Technical Support Contact'
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: above
+              type: entity_reference_label
+              settings:
+                link: true
+              third_party_settings: {  }
+              weight: 0
+              region: content
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            region: content
+            weight: 36
+            uuid: 207ae181-b5c8-412f-8892-5a717d873b03
+        id: panels_variant
+        label: Default
+        uuid: 099f5961-d3a6-4c4a-9de4-7e9983ec2def
+        weight: 0
+        layout: layout_onecol
+        layout_settings: {  }
+        page_title: '[node:title]'
+        storage_type: ''
+        storage_id: ''
+        builder: ipe
+        pattern: panelizer
+      journal_default_display:
+        blocks:
+          02602901-b5da-4f68-8aad-786421e86014:
+            id: 'entity_view:node'
+            label: 'Entity view (Content)'
+            provider: ctools
+            label_display: visible
+            view_mode: teaser
+            region: top
+            weight: 0
+            uuid: 02602901-b5da-4f68-8aad-786421e86014
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+          97f2d8df-c2ef-4d5d-8133-16a703c8dbf1:
+            id: 'views_block:journal_issue_list-journal_issue_list'
+            label: ''
+            provider: views
+            label_display: visible
+            views_label: ''
+            items_per_page: none
+            region: bottom
+            weight: 0
+            uuid: 97f2d8df-c2ef-4d5d-8133-16a703c8dbf1
+            context_mapping: {  }
+        id: panels_variant
+        uuid: 7b133c42-b593-4ed7-b467-86aef168c418
+        label: 'Journal Default Display'
+        weight: 0
+        layout: layout_twocol
+        layout_settings: {  }
+        page_title: ''
+        storage_type: panelizer_default
+        storage_id: 'node:journal:default:journal_default_display'
+        pattern: panelizer
+        builder: standard
+        static_context: {  }
+  field_group:
+    group_journal_display:
+      children:
+        - field_journal_logo
+        - group_journal_home
+        - group_journal_for_readers
+        - group_journal_for_authors
+        - group_journal_for_librarians
+        - group_contact
+      parent_name: ''
+      weight: 1
+      format_type: tabs
+      format_settings:
+        label: Information
+        direction: vertical
+        id: journal-information-tabs
+        classes: ''
+      label: Information
+    group_contact:
+      children:
+        - field_journal_mailing_address
+        - field_journal_principal_contact
+        - field_journal_technical_support_
+      parent_name: group_journal_display
+      weight: 5
+      format_type: tab
+      format_settings:
+        id: journal-display-contact-tab
+        classes: ''
+        formatter: closed
+        description: 'Contact info for this journal'
+      label: Contact
+    group_journal_home:
+      children:
+        - field_journal_abbrev
+        - field_journal_about_this
+        - field_journal_publisher
+        - field_journal_eissn
+        - field_journal_issn_print
+        - field_journal_main_image
+      parent_name: group_journal_display
+      weight: 1
+      format_type: tab
+      format_settings:
+        id: journal-home-tab
+        classes: ''
+        formatter: closed
+        description: ''
+      label: Home
+    group_journal_for_readers:
+      children:
+        - field_journal_for_readers
+      parent_name: group_journal_display
+      weight: 2
+      format_type: tab
+      format_settings:
+        id: journal-for-readers-tab
+        classes: ''
+        formatter: closed
+        description: ''
+      label: 'For Readers'
+    group_journal_for_authors:
+      children:
+        - field_journal_for_authors
+        - field_journal_author_guidelines
+      parent_name: group_journal_display
+      weight: 3
+      format_type: tab
+      format_settings:
+        id: journal-for-authors-tab
+        classes: ''
+        formatter: closed
+        description: ''
+      label: 'For Authors'
+    group_journal_for_librarians:
+      children:
+        - field_journal_for_librarins
+      parent_name: group_journal_display
+      weight: 4
+      format_type: tab
+      format_settings:
+        id: journal-for-librarians-tab
+        classes: ''
+        formatter: closed
+        description: ''
+      label: 'For Librarians'
+_core:
+  default_config_hash: arYZmgJskfdWf-RLCJYmuSgq5NWt1pcgtcSzweVV0DU
+id: node.journal.default
+targetEntityType: node
+bundle: journal
+mode: default
+content:
+  field_journal_abbrev:
+    weight: 24
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_journal_about_this:
+    weight: 25
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_journal_author_guidelines:
+    weight: 2
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_journal_eissn:
+    weight: 27
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_journal_for_authors:
+    weight: 1
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_journal_for_librarins:
+    weight: 30
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_journal_for_readers:
+    weight: 12
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_journal_issn_print:
+    weight: 28
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_journal_logo:
+    weight: 0
+    label: above
+    settings:
+      image_style: thumbnail
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_journal_mailing_address:
+    weight: 34
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: address_default
+    region: content
+  field_journal_main_image:
+    weight: 29
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_journal_principal_contact:
+    weight: 35
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_journal_publisher:
+    weight: 26
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_journal_technical_support_:
+    weight: 36
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+hidden:
+  field_journal_description: true
+  field_journal_initials: true
+  links: true
+  scheduled_publication: true

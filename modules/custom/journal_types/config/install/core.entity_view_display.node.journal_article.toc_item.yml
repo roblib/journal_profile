@@ -1,0 +1,156 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.toc_item
+    - field.field.node.journal_article.body
+    - field.field.node.journal_article.field_article_dc_rights
+    - field.field.node.journal_article.field_article_dc_source
+    - field.field.node.journal_article.field_article_disciplines
+    - field.field.node.journal_article.field_article_editor_comments
+    - field.field.node.journal_article.field_article_highlight_image
+    - field.field.node.journal_article.field_part_of
+    - field.field.node.journal_article.field_article_peer_reviewed
+    - field.field.node.journal_article.field_article_section
+    - field.field.node.journal_article.field_article_subjects
+    - field.field.node.journal_article.field_article_submission_files
+    - field.field.node.journal_article.field_article_subtitle
+    - field.field.node.journal_article.field_article_type
+    - field.field.node.journal_article.field_authors_and_affiliations
+    - field.field.node.journal_article.field_editorial_comments
+    - field.field.node.journal_article.field_journal_article_abstract
+    - field.field.node.journal_article.field_journal_article_keywords
+    - field.field.node.journal_article.field_publication_date_electroni
+    - node.type.journal_article
+  module:
+    - journal_types
+    - media
+    - panelizer
+    - text
+    - user
+third_party_settings:
+  panelizer:
+    enable: true
+    custom: false
+    allow: false
+    default: default
+    displays:
+      default:
+        blocks:
+          56782582-f55e-4632-aa5e-8ff725f03fe4:
+            id: 'entity_field:node:field_article_highlight_image'
+            label: 'Highlight Image'
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: hidden
+              type: media_thumbnail
+              settings:
+                image_style: thumbnail
+                image_link: content
+              third_party_settings: {  }
+              weight: 0
+              region: content
+            region: second
+            weight: 0
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            uuid: 56782582-f55e-4632-aa5e-8ff725f03fe4
+          573b4820-044d-4d83-99f8-ce9a1126a081:
+            id: 'entity_field:node:field_article_subtitle'
+            label: Subtitle
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: visually_hidden
+              type: text_default
+              settings: {  }
+              third_party_settings: {  }
+              weight: 0
+              region: content
+            region: first
+            weight: 2
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            uuid: 573b4820-044d-4d83-99f8-ce9a1126a081
+          dd71755d-e5a6-49f7-9c7d-0d76e7bd6aa3:
+            id: 'entity_field:node:field_journal_article_abstract'
+            label: Abstract
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: hidden
+              type: citation_field_formatter
+              settings:
+                style: modern_language_association_8th_edition
+                omit_title: 1
+              third_party_settings: {  }
+              weight: 0
+              region: content
+            region: first
+            weight: 4
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            uuid: dd71755d-e5a6-49f7-9c7d-0d76e7bd6aa3
+        id: panels_variant
+        label: Default
+        uuid: a26fd2a7-d12c-43bd-a3e5-2e972d067083
+        weight: 0
+        layout: layout_twocol
+        layout_settings: {  }
+        page_title: '[node:title]'
+        storage_type: panelizer_default
+        storage_id: 'node:journal_article:toc_item:default'
+        builder: ipe
+        pattern: panelizer
+        static_context: {  }
+_core:
+  default_config_hash: WGsgAfOj0YlUOfmFp58ZBX2Per_QmxYcTmc96_AR8vI
+id: node.journal_article.toc_item
+targetEntityType: node
+bundle: journal_article
+mode: toc_item
+content:
+  field_article_highlight_image:
+    type: media_thumbnail
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+  field_article_subtitle:
+    type: text_default
+    weight: 2
+    region: content
+    label: visually_hidden
+    settings: {  }
+    third_party_settings: {  }
+  field_journal_article_abstract:
+    type: citation_field_formatter
+    weight: 4
+    region: content
+    label: hidden
+    settings:
+      style: modern_language_association_8th_edition
+      omit_title: '1'
+    third_party_settings: {  }
+hidden:
+  body: true
+  content_moderation_control: true
+  field_article_dc_rights: true
+  field_article_dc_source: true
+  field_article_disciplines: true
+  field_article_editor_comments: true
+  field_part_of: true
+  field_article_peer_reviewed: true
+  field_article_section: true
+  field_article_subjects: true
+  field_article_submission_files: true
+  field_article_type: true
+  field_authors_and_affiliations: true
+  field_editorial_comments: true
+  field_journal_article_keywords: true
+  field_publication_date_electroni: true
+  links: true

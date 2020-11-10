@@ -1,0 +1,33 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.journal_article
+  module:
+    - allowed_formats
+    - require_on_publish
+    - text
+third_party_settings:
+  allowed_formats:
+    rich_text_references: rich_text_references
+    links_only: '0'
+    rich_text: '0'
+    plain_text: '0'
+  require_on_publish:
+    require_on_publish: false
+_core:
+  default_config_hash: rzlFs8iu6RY1ugNs7AWdSdHDpNwnj90hcz4DMK0hEkc
+id: node.journal_article.body
+field_name: body
+entity_type: node
+bundle: journal_article
+label: 'Article Text'
+description: 'Article main body. You can create a table of contents by styling sections titles with the "Heading 2", "Heading 3", etc. Then insert the string "[TOC]" where the table of contents should be located.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+field_type: text_with_summary

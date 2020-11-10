@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_publication_date_electroni
+    - node.type.journal_article
+  module:
+    - datetime
+id: node.journal_article.field_publication_date_electroni
+field_name: field_publication_date_electroni
+entity_type: node
+bundle: journal_article
+label: 'Published on'
+description: 'Official electronic publication date of the article. This can be overridden by editors.'
+required: false
+translatable: false
+default_value:
+  -
+    default_date_type: now
+    default_date: now
+default_value_callback: ''
+settings: {  }
+field_type: datetime

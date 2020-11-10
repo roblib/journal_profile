@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_issue_volume
+    - node.type.issue
+  module:
+    - require_on_publish
+third_party_settings:
+  require_on_publish:
+    require_on_publish: false
+id: node.issue.field_issue_volume
+field_name: field_issue_volume
+entity_type: node
+bundle: issue
+label: Volume
+description: 'Designate a volume taht this issue is part of. Used in citations.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 1
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

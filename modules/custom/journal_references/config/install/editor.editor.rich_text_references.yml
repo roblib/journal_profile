@@ -1,0 +1,66 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.rich_text_references
+  module:
+    - ckeditor
+_core:
+  default_config_hash: VcTIWimn2gjjIeXeNlksgzleqMPYHTBGTIzvNJ9Tu_0
+format: rich_text_references
+editor: ckeditor
+settings:
+  toolbar:
+    rows:
+      -
+        -
+          name: Formatting
+          items:
+            - Bold
+            - Italic
+            - Subscript
+            - Superscript
+            - JustifyLeft
+            - JustifyCenter
+            - JustifyRight
+            - Outdent
+            - Indent
+            - Format
+        -
+          name: Links
+          items:
+            - DrupalLink
+            - DrupalUnlink
+            - reference_footnotes
+        -
+          name: Lists
+          items:
+            - BulletedList
+            - NumberedList
+        -
+          name: Media
+          items:
+            - media_browser
+            - Blockquote
+            - blockquote_attribution
+        -
+          name: Tools
+          items:
+            - Table
+            - Source
+            - SpecialChar
+            - Language
+            - Maximize
+  plugins:
+    stylescombo:
+      styles: ''
+    language:
+      language_list: un
+image_upload:
+  status: false
+  scheme: public
+  directory: inline-images
+  max_size: ''
+  max_dimensions:
+    width: null
+    height: null

@@ -1,0 +1,132 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - field_permissions
+    - node
+    - options
+third_party_settings:
+  field_permissions:
+    permission_type: public
+id: node.field_article_type
+field_name: field_article_type
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: Artwork
+      label: Artwork
+    -
+      value: Audiovisual
+      label: Audiovisual
+    -
+      value: Bill
+      label: Bill
+    -
+      value: Book
+      label: Book
+    -
+      value: 'Book Chapter'
+      label: 'Book Chapter'
+    -
+      value: Broadcast
+      label: Broadcast
+    -
+      value: Case
+      label: Case
+    -
+      value: Chart
+      label: Chart
+    -
+      value: Classical
+      label: Classical
+    -
+      value: 'Conference Paper'
+      label: 'Conference Paper'
+    -
+      value: 'Conference Proceedings'
+      label: 'Conference Proceedings'
+    -
+      value: Database
+      label: Database
+    -
+      value: Film
+      label: Film
+    -
+      value: 'Government Report'
+      label: 'Government Report'
+    -
+      value: Hearing
+      label: Hearing
+    -
+      value: Journal
+      label: Journal
+    -
+      value: 'Journal Article'
+      label: 'Journal Article'
+    -
+      value: 'Legal Ruling'
+      label: 'Legal Ruling'
+    -
+      value: 'Magazine Article'
+      label: 'Magazine Article'
+    -
+      value: Manuscript
+      label: Manuscript
+    -
+      value: Map
+      label: Map
+    -
+      value: Miscellaneous
+      label: Miscellaneous
+    -
+      value: 'Miscellaneous Section'
+      label: 'Miscellaneous Section'
+    -
+      value: 'Newspaper Article'
+      label: 'Newspaper Article'
+    -
+      value: Patent
+      label: Patent
+    -
+      value: Personal
+      label: Personal
+    -
+      value: Presentation
+      label: Presentation
+    -
+      value: Report
+      label: Report
+    -
+      value: Software
+      label: Software
+    -
+      value: Statute
+      label: Statute
+    -
+      value: Thesis
+      label: Thesis
+    -
+      value: Unpublished
+      label: Unpublished
+    -
+      value: 'Web Article'
+      label: 'Web Article'
+    -
+      value: 'Web project page'
+      label: 'Web project page'
+    -
+      value: 'Web service'
+      label: 'Web service'
+    -
+      value: Website
+      label: Website
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

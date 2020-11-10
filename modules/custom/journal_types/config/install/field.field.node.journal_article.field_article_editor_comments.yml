@@ -1,0 +1,29 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_article_editor_comments
+    - node.type.journal_article
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    links_only: links_only
+    rich_text_references: '0'
+    rich_text: '0'
+    plain_text: '0'
+_core:
+  default_config_hash: 6JNJZFHF-P8xWrv9vDPsBcyk_5ePdbwUdESzlmivdXE
+id: node.journal_article.field_article_editor_comments
+field_name: field_article_editor_comments
+entity_type: node
+bundle: journal_article
+label: 'Comments for the Editor'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

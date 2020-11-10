@@ -1,0 +1,29 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - comment.type.editorial_comments
+    - field.storage.comment.comment_body
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    links_only: links_only
+    rich_text_references: '0'
+    rich_text: '0'
+    plain_text: '0'
+_core:
+  default_config_hash: rVU0_kDPTzmCPboD1M7c3bZ2J2L8Ag_io1N0nmehhXM
+id: comment.editorial_comments.comment_body
+field_name: comment_body
+entity_type: comment
+bundle: editorial_comments
+label: Comment
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

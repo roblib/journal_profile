@@ -1,0 +1,5 @@
+services:
+  journal_references.route_subscriber:
+    class: Drupal\journal_references\Routing\RouteSubscriber
+    tags:
+      - { name: event_subscriber }

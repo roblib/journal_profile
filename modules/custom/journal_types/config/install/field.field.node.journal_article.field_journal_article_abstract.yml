@@ -1,0 +1,29 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_journal_article_abstract
+    - node.type.journal_article
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    rich_text_references: rich_text_references
+    links_only: '0'
+    rich_text: '0'
+    plain_text: '0'
+_core:
+  default_config_hash: M5Alg8YCqQbYAzJuw4cJ1YZLigodhvMPQ2qJ72XzdQc
+id: node.journal_article.field_journal_article_abstract
+field_name: field_journal_article_abstract
+entity_type: node
+bundle: journal_article
+label: Abstract
+description: 'Short abstract displayed in lists of articles'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

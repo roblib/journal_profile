@@ -1,0 +1,27 @@
+journal_site.import:
+  title: 'Import citations'
+  description: 'Import a list of citations by uploading them.'
+  menu_name: author-tasks
+  route_name: bibcite_import.import
+journal_site.submit_new_article:
+  title: 'Submit a new article'
+  description: 'Submit a new scholarly article for review.'
+  menu_name: author-tasks
+  route_name: node.add
+  route_parameters:
+    node_type: journal_article
+journal_site.populate:
+  title: 'Paste citations'
+  description: 'Import a citation via Copy & Paste.'
+  menu_name: author-tasks
+  route_name: bibcite_import.populate
+journal_site.create_citation:
+  title: 'Add a new citaiton'
+  description: 'Create a citaiton directly.'
+  menu_name: author-tasks
+  route_name: entity.bibcite_reference.add_page
+journal_site.add_contributor:
+  title: 'Add contributor'
+  description: 'Add authors and other contributors to include in your article heading.'
+  menu_name: author-tasks
+  route_name: entity.bibcite_contributor.add_form

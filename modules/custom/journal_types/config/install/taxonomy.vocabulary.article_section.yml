@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+name: Section
+vid: article_section
+description: 'Sections of each issue that articles are grouped by'
+hierarchy: 0
+weight: 0

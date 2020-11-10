@@ -1,0 +1,10 @@
+name: 'Journal Peer Review'
+type: module
+description: 'Assign peer reviewers to articles'
+core: 8.x
+package: 'Journal'
+dependencies:
+  - journal_types
+  - journal_editorial
+  - field_permissions
+

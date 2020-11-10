@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_journal_author_guidelines
+    - node.type.journal
+  module:
+    - text
+id: node.journal.field_journal_author_guidelines
+field_name: field_journal_author_guidelines
+entity_type: node
+bundle: journal
+label: 'Author Guidelines'
+description: 'Recommended guidelines include bibliographic and formatting standards alongside examples of common citation formats to be used in submissions.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

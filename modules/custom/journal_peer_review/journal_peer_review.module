@@ -1,0 +1,152 @@
+<?php
+
+use Drupal\Core\Access\AccessResult;
+use Drupal\node\NodeInterface;
+use Drupal\Core\Entity\Entity\EntityFormDisplay;
+use Drupal\Core\Entity\Entity\EntityViewDisplay;
+use Drupal\Core\Session\AccountInterface;
+use Drupal\journal_peer_review\Utils;
+
+/**
+ * Implementation of hook_modules_installed().
+ *
+ * Workaround because custom field permissions are not exporting properly.
+ * Limit who can view the 'assigned reviewer' field to only Journal and Issue reviewwers.
+ *
+ * @param array $modules
+ */
+function journal_peer_review_modules_installed(array $modules) {
+  journal_peer_review_grant_field_permissions(
+    [
+      'create field_peer_reviewer' => [
+        'journal_editor',
+        'issue_editor',
+      ],
+      'edit field_peer_reviewer' => [
+        'journal_editor',
+        'issue_editor',
+      ],
+      'view field_peer_reviewer' => [
+        'journal_editor',
+        'issue_editor',
+      ],
+    ]);
+
+  $field = \Drupal\field\Entity\FieldConfig::loadByName('node', 'journal_article', 'field_authors_and_affiliations');
+  $storage = $field->getFieldStorageDefinition();
+  $storage->setThirdPartySetting('field_permissions', 'permission_type', 'custom');
+  $storage->save();
+
+  foreach ([
+             'field_authors_and_affiliations',
+             'field_affiliation_contributor',
+             'field_affiliation_string'
+           ] as $field_name) {
+    journal_peer_review_grant_field_permissions(
+      [
+        "create $field_name" => [
+          'journal_editor',
+          'issue_editor',
+          'journal_article_creator',
+        ],
+        "edit own $field_name" => [
+          'journal_editor',
+          'issue_editor',
+          'journal_article_creator',
+        ],
+        "edit $field_name" => [
+          'issue_editor',
+          'journal_editor',
+        ],
+        "view own $field_name" => [
+          'journal_article_creator',
+        ],
+        "view $field_name" => [
+          'issue_editor',
+          'journal_editor',
+        ],
+      ]
+    );
+  }
+
+
+  // Put Assigned Reviewer into the Publication State form region.
+  $form_entity = EntityFormDisplay::load('node.journal_article.default');
+  $group_data = $form_entity->getThirdPartySettings('field_group');
+  $pubstate_group = $group_data['group_publication_state'];
+  array_splice($pubstate_group['children'], 1, 0, 'field_peer_reviewer');
+  $form_entity->setComponent('field_peer_reviewer', ['region' => 'content'])
+  ->setThirdPartySetting('field_group', 'group_publication_state', $pubstate_group)
+  ->save();
+
+  // Add 'Peer Reviewers' field to the Entity View Display
+  $view_entity = EntityViewDisplay::load('node.journal_article.default');
+  $view_entity->setComponent('field_peer_reviewer', [
+    'type' => 'entity_reference_label',
+    'weight' => 5,
+    'region' => 'content',
+    'label' => 'above',
+    'settings' => ['link' => '1']])
+    ->save();
+}
+
+
+/**
+ * Implements hook_node_access().
+ *
+ * @inheritdoc
+ */
+function journal_peer_review_node_access(NodeInterface $node, $op, AccountInterface $account) {
+
+  if ($node->bundle() != 'journal_article') {
+    return AccessResult::neutral();
+  }
+
+  // Pass-through if node is published as we are through the peer review process.
+  if ($node->isPublished()) {
+    return AccessResult::neutral();
+  }
+
+  // If user does not have article reviewer role, just pass through
+  // and let the standard Drupal access rules handle it.
+  if (!in_array('journal_article_reviewer', $account->getRoles())) {
+    return AccessResult::neutral();
+  }
+
+  $reviewers = $node->get('field_peer_reviewer');
+
+  if (!empty($reviewers) && is_a($reviewers, 'Drupal\Core\Field\EntityReferenceFieldItemList')) {
+    foreach ($reviewers->referencedEntities() as $reviewer) {
+      if ($reviewer->getEntityTypeId() == 'user' && $reviewer->id() == $account->id()) {
+        // User is in the assigned reviewers list, so they can see the article.
+        return AccessResult::allowed();
+      }
+    }
+  }
+
+  return AccessResult::forbidden();
+}
+
+/**
+ * Loop through the array and grant permissions for the specified roels on each field.
+ *
+ * @param $permissions
+ */
+function journal_peer_review_grant_field_permissions($permissions) {
+  $role_storage = \Drupal::service('entity_type.manager')->getStorage('user_role');
+  $roles = [];
+
+  foreach ($permissions as $permission_name => $role_names) {
+    foreach ($role_names as $role_name) {
+      $roles[$role_name] = $role_storage->load($role_name);
+      if (!empty($roles[$role_name])) {
+        $roles[$role_name]->grantPermission($permission_name);
+      }
+    }
+  }
+
+  // Save all roles.
+//  foreach ($roles as $role) {
+//    $role->trustData()->save();
+//  }
+}

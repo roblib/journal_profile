@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_journal_eissn
+    - node.type.journal
+id: node.journal.field_journal_eissn
+field_name: field_journal_eissn
+entity_type: node
+bundle: journal
+label: 'ISSN (Electronic)'
+description: 'ISSN for the electronic version of the journal'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

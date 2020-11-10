@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+name: Subjects
+vid: subjects
+description: 'Subjects for article submissions.'
+hierarchy: 0
+weight: 0

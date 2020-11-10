@@ -1,0 +1,19 @@
+name: 'Journal References'
+type: module
+description: 'Settings for inline citations in article content'
+core: 8.x
+package: 'Journal'
+dependencies:
+  - journal_types
+  - embed
+  - bibcite
+  - bibcite_bibtex
+  - bibcite_ris
+  - bibcite_import
+  - bibcite_endnote
+  - bibcite_marc
+  - bibcite_entity
+  - footnotes
+  - bibcite_footnotes
+  - ckeditor_blockquote_attribution
+  - toc_filter

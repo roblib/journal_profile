@@ -1,0 +1,35 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_peer_reviewer
+    - node.type.journal_article
+_core:
+  default_config_hash: 1rYuhiA4RSxrD4-Yx28YLr0WrHuXFoyBYUmclguivGs
+id: node.journal_article.field_peer_reviewer
+field_name: field_peer_reviewer
+entity_type: node
+bundle: journal_article
+label: 'Peer reviewer'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:user'
+  handler_settings:
+    include_anonymous: false
+    filter:
+      type: role
+      role:
+        journal_article_reviewer: journal_article_reviewer
+        administrator: '0'
+        journal_editor: '0'
+        issue_editor: '0'
+        journal_article_creator: '0'
+    target_bundles: null
+    sort:
+      field: _none
+    auto_create: false
+field_type: entity_reference

@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_journal_for_librarins
+    - node.type.journal
+  module:
+    - text
+id: node.journal.field_journal_for_librarins
+field_name: field_journal_for_librarins
+entity_type: node
+bundle: journal
+label: 'Information For Librarians'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: "<p>We encourage research librarians to list this journal among their library's electronic journal holdings. As well, it may be worth noting that this journal's open source publishing system is suitable for libraries to host for their faculty members to use with journals they are involved in editing (see Open Journal Systems).</p>\r\n"
+    format: rich_text
+default_value_callback: ''
+settings: {  }
+field_type: text_long

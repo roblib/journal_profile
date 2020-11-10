@@ -1,0 +1,84 @@
+<?php
+
+/**
+ * @file
+ * Contains journal_types.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\journal_types\CitationTools;
+use Drupal\pathauto\Entity\PathautoPattern;
+/**
+ * Implements hook_help().
+ */
+function journal_types_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the journal_types module.
+    case 'help.page.journal_types':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Content types for scholarly content') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function journal_types_theme() {
+  return [
+    'journal_types' => [
+      'render element' => 'children',
+    ],
+  ];
+}
+
+/**
+ * Implementation of hook_pathauto_pattern_alter().
+ *
+ * The URL Scheme for scholarly content is:
+ *
+ * Article: /[journal initials]/[volume]/[issue number]/[article title]
+ * Issue: /[journal initials]/[volume]/[issue number]/[issue title]
+ * Journal: /[journal initials]/[journal title]
+ *
+ * Where all fields are subject to PathAuto's URL cleaner.
+ *
+ * @param PathautoPattern $pattern
+ * @param array $context
+ */
+function journal_types_pathauto_pattern_alter(PathautoPattern &$pattern, array $context) {
+  if ($context['module'] == 'node' && ($context['op'] == 'insert' || $context['op'] == 'update')) {
+
+    /** @var \Drupal\node\Entity\Node $node */
+    $node = $context['data']['node'];
+    $citationTools = new CitationTools();
+    $citation_metadata = $citationTools->getCitationMetadata($node);
+    $cleaner = \Drupal::service('pathauto.alias_cleaner');
+    $parts = [];
+    switch ($node->getType()) {
+      // Non-breaking pass-through is intentional here.
+      case 'journal_article':
+        $parts[] = $citation_metadata['bibcite_number'][0]['value'];
+      case 'issue':
+        // If this is the volume itself, it will get added via [node:title]
+        if (!empty($citation_metadata['bibcite_volume'][0]['value'])) {
+          array_unshift($parts, $citation_metadata['bibcite_volume'][0]['value']);
+        }
+        if (!empty($citation_metadata['journal_initials'][0]['value'])) {
+          array_unshift($parts, $citation_metadata['journal_initials'][0]['value']);
+        }
+    }
+    if (!empty($parts)) {
+      $slug = '';
+      foreach ($parts as $part) {
+        $slug .= !empty($part) ? $cleaner->cleanString($part) . '/' : '';
+      }
+
+      $pattern->setPattern($slug . '/' . $pattern->getPattern());
+    }
+  }
+}
+

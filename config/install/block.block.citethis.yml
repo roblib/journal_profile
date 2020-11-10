@@ -1,0 +1,29 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - journal_cite_this
+    - node
+  theme:
+    - bartik
+id: citethis
+theme: bartik
+region: sidebar_second
+weight: 0
+provider: null
+plugin: cite_this_block
+settings:
+  id: cite_this_block
+  label: 'Cite this'
+  provider: journal_cite_this
+  label_display: visible
+  context_mapping:
+    node: '@node.node_route_context:node'
+visibility:
+  node_type:
+    id: node_type
+    bundles:
+      journal_article: journal_article
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

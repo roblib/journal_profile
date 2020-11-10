@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_journal_about_this
+    - node.type.journal
+  module:
+    - text
+id: node.journal.field_journal_about_this
+field_name: field_journal_about_this
+entity_type: node
+bundle: journal
+label: 'About this Journal'
+description: 'Includes information of interest to readers and submitters, such as open access policies, disclosures, and relevant technical information.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

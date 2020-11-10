@@ -1,0 +1,28 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_journal_technical_support_
+    - node.type.journal
+id: node.journal.field_journal_technical_support_
+field_name: field_journal_technical_support_
+entity_type: node
+bundle: journal
+label: 'Journal Technical Support Contact'
+description: 'A user to whom technical inquiries will be directed'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:user'
+  handler_settings:
+    include_anonymous: false
+    filter:
+      type: _none
+    target_bundles: null
+    sort:
+      field: name
+      direction: ASC
+    auto_create: true
+field_type: entity_reference

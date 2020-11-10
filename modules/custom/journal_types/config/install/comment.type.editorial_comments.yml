@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: editorial_comments
+label: 'Editorial Comments'
+target_entity_type_id: node
+description: 'Used for conversations between reviewers, editors and submitters. Not visible to anonymous users.'

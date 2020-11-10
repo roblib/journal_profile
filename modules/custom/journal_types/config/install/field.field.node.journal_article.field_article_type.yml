@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_article_type
+    - node.type.journal_article
+  module:
+    - options
+id: node.journal_article.field_article_type
+field_name: field_article_type
+entity_type: node
+bundle: journal_article
+label: Type
+description: 'The type of work.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 'Journal Article'
+default_value_callback: ''
+settings: {  }
+field_type: list_string
