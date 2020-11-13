@@ -45,7 +45,7 @@
 "drupal/metatag_google_scholar": "^1.0@beta",
 "drupal/masquerade": "^2.0@beta",
 "drupal/inline_entity_form": "^1.0@RC",
-"drupal/taxonomy_import": "^1.0",
+"drupal/taxonomy_import": "^2.0@alpha",
 "drupal/linkit": "6.0.0-beta1",
 "drupal/require_on_publish": "^1.2",
 "drupal/ckeditor_bootstrap_grid": "^1.2",
