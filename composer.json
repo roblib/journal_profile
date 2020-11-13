@@ -35,7 +35,7 @@
 "previousnext/nested-set": "^0.1.1",
 "drupal/entity_hierarchy": "^2.0@alpha",
 "drupal/name": "1.x-dev",
-"drupal/bamboo_twig": "^4.1",
+"drupal/bamboo_twig": "^5@alpha",
 "twig/extensions": "^1.5",
 "drupal/twig_field_value": "^2",
 "drupal/search_api_solr": "^4",
