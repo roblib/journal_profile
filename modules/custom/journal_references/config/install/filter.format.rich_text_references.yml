@@ -6,7 +6,6 @@ dependencies:
     - editor
     - entity_embed
     - footnotes
-    - toc_filter
 _core:
   default_config_hash: iHJ16aGFwRk4HRJz7IPWJWsjxrjl0R1fUXwBSop2OaI
 name: 'Rich Text with References'
@@ -96,12 +95,3 @@ filters:
     weight: 0
     settings:
       footnotes_collapse: '0'
-  toc_filter:
-    id: toc_filter
-    provider: toc_filter
-    status: true
-    weight: 0
-    settings:
-      type: full
-      auto: ''
-      block: '0'

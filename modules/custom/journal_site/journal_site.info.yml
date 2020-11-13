@@ -8,6 +8,6 @@ dependencies:
   - journal_types
   - bibcite_entity
   - bibcite_import
-  - toc_filter
+
 
 

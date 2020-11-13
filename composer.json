@@ -29,7 +29,6 @@
 "drupal/views_entity_form_field": "^1.0@beta",
 "drupal/allowed_formats": "^1.1",
 "drupal/toc_api": "^1.0@beta",
-"drupal/toc_filter": "^2.0@beta",
 "drupal/simple_styleguide": "^1.4",
 "drupal/twig_tweak": "^2.1",
 "previousnext/nested-set": "^0.1.1",
