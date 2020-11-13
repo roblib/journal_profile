@@ -1,7 +1,7 @@
 name: 'Journal Devel'
 type: module
 description: 'Development extensions to the Journal install profile.'
-core: 8.x
+core_version_requirement: '^8.0 || ^9'
 package: 'Journal'
 dependencies:
   - block

@@ -1,7 +1,7 @@
 name: 'Journal Types'
 type: module
 description: 'Content types for scholarly content'
-core: 8.x
+core_version_requirement: '^8.0 || ^9'
 package: 'Journal'
 dependencies:
   - address

@@ -1,7 +1,7 @@
 name: 'Journal Peer Review'
 type: module
 description: 'Assign peer reviewers to articles'
-core: 8.x
+core_version_requirement: '^8.0 || ^9'
 package: 'Journal'
 dependencies:
   - journal_types

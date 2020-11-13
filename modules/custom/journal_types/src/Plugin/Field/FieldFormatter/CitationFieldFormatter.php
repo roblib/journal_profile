@@ -139,7 +139,7 @@ class CitationFieldFormatter extends FormatterBase implements ContainerFactoryPl
 
    // $r = Reference::create(['type' => 'book', 'author' => $item->getEntity()->get('field_article_contributors')]);
     //$r = entity_create('bibcite_reference', ['type' => 'book']);
-    $field_map = \Drupal::entityManager()->getFieldMap();
+    $field_map = \Drupal::service('entity_field.manager')->getFieldMap();
     $node_field_map = $field_map['node'];
     $entity = $item->getEntity();
     $citationTools = new CitationTools($this->entityTypeManager);

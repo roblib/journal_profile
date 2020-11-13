@@ -1,7 +1,7 @@
 name: 'Journal Cite This'
 type: module
 description: 'Cite an article using the Bibcite export formats.'
-core: 8.x
+core_version_requirement: '^8.0 || ^9'
 package: 'Journal'
 dependencies:
   - bibcite_export

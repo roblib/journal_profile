@@ -1,5 +1,6 @@
 <?php
 
+use Drupal\field\Entity\FieldConfig;
 use Drupal\Core\Access\AccessResult;
 use Drupal\node\NodeInterface;
 use Drupal\Core\Entity\Entity\EntityFormDisplay;
@@ -32,7 +33,7 @@ function journal_peer_review_modules_installed(array $modules) {
       ],
     ]);
 
-  $field = \Drupal\field\Entity\FieldConfig::loadByName('node', 'journal_article', 'field_authors_and_affiliations');
+  $field = FieldConfig::loadByName('node', 'journal_article', 'field_authors_and_affiliations');
   $storage = $field->getFieldStorageDefinition();
   $storage->setThirdPartySetting('field_permissions', 'permission_type', 'custom');
   $storage->save();
