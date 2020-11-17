@@ -16,7 +16,6 @@ install:
   - entity_browser
   - menu_ui
   - lightning_media
-  - embed
   - bibcite
   - bibcite_bibtex
   - bibcite_ris

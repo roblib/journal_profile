@@ -5,7 +5,6 @@ core_version_requirement: '^8.0 || ^9'
 package: 'Journal'
 dependencies:
   - journal_types
-  - embed
   - bibcite
   - bibcite_bibtex
   - bibcite_ris
