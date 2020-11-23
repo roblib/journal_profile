@@ -4,6 +4,7 @@ dependencies:
   module:
     - bibcite_footnotes
     - editor
+    - entity_embed
     - footnotes
 _core:
   default_config_hash: iHJ16aGFwRk4HRJz7IPWJWsjxrjl0R1fUXwBSop2OaI
@@ -34,6 +35,12 @@ filters:
     provider: editor
     status: true
     weight: -44
+    settings: {  }
+  entity_embed:
+    id: entity_embed
+    provider: entity_embed
+    status: true
+    weight: -45
     settings: {  }
   filter_html:
     id: filter_html
