@@ -11,7 +11,6 @@ function journal_install_tasks() {
 
   $tasks = [];
 
-  $tasks['lightning_prepare_administrator'] = [];
   $tasks['lightning_set_front_page'] = [];
   $tasks['lightning_disallow_free_registration'] = [];
   $tasks['lightning_grant_shortcut_access'] = [];
