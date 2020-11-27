@@ -40,7 +40,7 @@ settings:
         -
           name: Media
           items:
-            - media_browser
+            - entity_browser
             - Blockquote
             - blockquote_attribution
         -

@@ -8,7 +8,6 @@ dependencies:
     - field.field.node.journal_article.field_article_dc_source
     - field.field.node.journal_article.field_article_disciplines
     - field.field.node.journal_article.field_article_editor_comments
-    - field.field.node.journal_article.field_article_highlight_image
     - field.field.node.journal_article.field_article_peer_reviewed
     - field.field.node.journal_article.field_article_section
     - field.field.node.journal_article.field_article_subjects
@@ -58,9 +57,7 @@ hidden:
   field_article_dc_source: true
   field_article_disciplines: true
   field_article_editor_comments: true
-  field_article_highlight_image: true
   field_article_peer_reviewed: true
-  field_article_section: true
   field_article_subjects: true
   field_article_submission_files: true
   field_article_subtitle: true

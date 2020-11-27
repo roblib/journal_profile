@@ -7,7 +7,6 @@ dependencies:
     - field.field.node.journal_article.field_article_dc_source
     - field.field.node.journal_article.field_article_disciplines
     - field.field.node.journal_article.field_article_editor_comments
-    - field.field.node.journal_article.field_article_highlight_image
     - field.field.node.journal_article.field_article_peer_reviewed
     - field.field.node.journal_article.field_article_section
     - field.field.node.journal_article.field_article_subjects
@@ -209,7 +208,6 @@ content:
     third_party_settings: {  }
 hidden:
   field_article_editor_comments: true
-  field_article_highlight_image: true
   field_article_type: true
   field_cc_license: true
   field_editorial_comments: true

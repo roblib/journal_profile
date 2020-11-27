@@ -3,7 +3,6 @@ status: true
 dependencies:
   config:
     - field.field.node.news_article.body
-    - field.field.node.news_article.field_article_highlight_image
     - field.field.node.news_article.field_article_section
     - field.field.node.news_article.field_part_of
     - node.type.news_article
@@ -31,14 +30,6 @@ content:
     weight: 2
     settings: {  }
     third_party_settings: {  }
-    region: content
-  field_article_highlight_image:
-    weight: 4
-    label: visually_hidden
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
     region: content
   field_article_section:
     weight: 3

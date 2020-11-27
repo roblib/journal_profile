@@ -6,7 +6,7 @@ _core:
 id: node__journal_article
 label: 'Content: Article'
 tags:
-  image_src: '[node:field_article_highlight_image:entity:image:entity:url]'
+  image_src: ''
   dcterms_identifier: '[node:field_doi]'
   dcterms_title: '[node:title]'
   dcterms_contributor: '[node:field_authors_and_affiliations:entity:field_affiliation_contributor]'

@@ -8,7 +8,6 @@ dependencies:
     - field.field.node.journal_article.field_article_dc_source
     - field.field.node.journal_article.field_article_disciplines
     - field.field.node.journal_article.field_article_editor_comments
-    - field.field.node.journal_article.field_article_highlight_image
     - field.field.node.journal_article.field_part_of
     - field.field.node.journal_article.field_article_peer_reviewed
     - field.field.node.journal_article.field_article_section
@@ -37,25 +36,6 @@ third_party_settings:
     displays:
       default:
         blocks:
-          56782582-f55e-4632-aa5e-8ff725f03fe4:
-            id: 'entity_field:node:field_article_highlight_image'
-            label: 'Highlight Image'
-            provider: ctools_block
-            label_display: '0'
-            formatter:
-              label: hidden
-              type: media_thumbnail
-              settings:
-                image_style: thumbnail
-                image_link: content
-              third_party_settings: {  }
-              weight: 0
-              region: content
-            region: second
-            weight: 0
-            context_mapping:
-              entity: '@panelizer.entity_context:entity'
-            uuid: 56782582-f55e-4632-aa5e-8ff725f03fe4
           573b4820-044d-4d83-99f8-ce9a1126a081:
             id: 'entity_field:node:field_article_subtitle'
             label: Subtitle
@@ -111,15 +91,6 @@ targetEntityType: node
 bundle: journal_article
 mode: toc_item
 content:
-  field_article_highlight_image:
-    type: media_thumbnail
-    weight: 0
-    region: content
-    label: hidden
-    settings:
-      image_style: ''
-      image_link: ''
-    third_party_settings: {  }
   field_article_subtitle:
     type: text_default
     weight: 2

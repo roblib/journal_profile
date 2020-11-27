@@ -2,13 +2,11 @@ langcode: en
 status: true
 dependencies:
   config:
-    - entity_browser.browser.media_browser
     - field.field.node.journal_article.body
     - field.field.node.journal_article.field_article_dc_rights
     - field.field.node.journal_article.field_article_dc_source
     - field.field.node.journal_article.field_article_disciplines
     - field.field.node.journal_article.field_article_editor_comments
-    - field.field.node.journal_article.field_article_highlight_image
     - field.field.node.journal_article.field_part_of
     - field.field.node.journal_article.field_article_peer_reviewed
     - field.field.node.journal_article.field_article_section
@@ -88,7 +86,6 @@ third_party_settings:
         - field_journal_article_abstract
         - body
         - field_works_cited
-        - field_article_highlight_image
         - field_article_submission_files
       parent_name: group_article_info
       weight: 20
@@ -192,27 +189,6 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: text_textarea
-    region: content
-  field_article_highlight_image:
-    type: entity_browser_entity_reference
-    weight: 5
-    settings:
-      entity_browser: media_browser
-      field_widget_display: rendered_entity
-      field_widget_edit: true
-      field_widget_remove: true
-      selection_mode: selection_append
-      field_widget_display_settings:
-        view_mode: thumbnail
-      open: true
-    region: content
-    third_party_settings: {  }
-  field_article_peer_reviewed:
-    weight: 239
-    settings:
-      display_label: true
-    third_party_settings: {  }
-    type: boolean_checkbox
     region: content
   field_article_section:
     weight: 235

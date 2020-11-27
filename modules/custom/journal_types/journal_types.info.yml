@@ -7,16 +7,17 @@ dependencies:
   - address
   - allowed_formats
   - comment
+  - entity_browser
   - entity_hierarchy
   - field_group
   - field_permissions
   - inline_entity_form
+  - lightning_media:lightning_media_image
   - media
   - name
   - panelizer
   - entity_browser
   - lightning_media
-  - lightning_media_image
   - journal_references
   - paragraphs
   - pathauto
