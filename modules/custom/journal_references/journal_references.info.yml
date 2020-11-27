@@ -15,3 +15,4 @@ dependencies:
   - footnotes
   - bibcite_footnotes
   - ckeditor_blockquote_attribution
+  - entity_embed
