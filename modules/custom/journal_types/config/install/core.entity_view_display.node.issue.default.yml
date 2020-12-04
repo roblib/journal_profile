@@ -13,15 +13,9 @@ dependencies:
     - datetime
     - field_group
     - image
-    - panelizer
     - text
     - user
 third_party_settings:
-  panelizer:
-    enable: false
-    custom: false
-    allow: false
-    default: default
   field_group:
     group_identification:
       children:

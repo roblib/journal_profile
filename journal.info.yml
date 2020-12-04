@@ -9,7 +9,6 @@ install:
   - address
   - field_group
   - field_permissions
-  - panelizer
   - views
   - views_entity_form_field
   - media

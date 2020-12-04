@@ -29,15 +29,9 @@ dependencies:
     - field_group
     - file
     - link
-    - panelizer
     - text
     - user
 third_party_settings:
-  panelizer:
-    enable: false
-    custom: false
-    allow: false
-    default: default
   field_group:
     group_article_info:
       children:

@@ -15,7 +15,6 @@ dependencies:
   - lightning_media:lightning_media_image
   - media
   - name
-  - panelizer
   - entity_browser
   - lightning_media
   - journal_references
