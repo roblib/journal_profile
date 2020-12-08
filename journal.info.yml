@@ -14,7 +14,6 @@ install:
   - media
   - entity_browser
   - menu_ui
-  - lightning_media:lightning_media_image
   - bibcite
   - bibcite_bibtex
   - bibcite_ris

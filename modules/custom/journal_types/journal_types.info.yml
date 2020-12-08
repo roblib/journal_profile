@@ -12,11 +12,10 @@ dependencies:
   - field_group
   - field_permissions
   - inline_entity_form
-  - lightning_media:lightning_media_image
+  - lightning_core
   - media
   - name
   - entity_browser
-  - lightning_media
   - journal_references
   - paragraphs
   - pathauto
