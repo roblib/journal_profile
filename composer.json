@@ -24,7 +24,7 @@
       "prefer-stable":true,
       "require":{
         "acquia/lightning":"~5",
-        "ckeditor-plugins/fakeobjects":"4.15.1",
+        "ckeditor-plugin/fakeobjects":"4.15.1",
         "drupal/address":"*",
         "drupal/field_group":"*",
         "drupal/entity":"~1.0@beta",
