@@ -7,18 +7,6 @@
         "drupal":{
           "type":"composer",
           "url":"https://packages.drupal.org/8"
-        },
-        "plugin":{
-          "type":"package",
-          "package":{
-            "name":"ckeditor-plugin/fakeobjects",
-            "version":"4.15.1",
-            "type":"ckeditor-plugin",
-            "dist":{
-              "url":"https://download.ckeditor.com/fakeobjects/releases/fakeobjects_4.15.1.zip",
-              "type":"zip"
-            }
-          }
         }
       },
       "prefer-stable":true,
@@ -61,15 +49,5 @@
         "drupal/eva":"^2.0",
         "drupal/module_filter":"^3.1",
         "drupal/media_attribution":"1.x-dev"
-      },
-      "extra":{
-        "installer-types":[
-          "ckeditor-plugin"
-        ],
-        "installer-paths":{
-          "web/libraries/{$name}":[
-            "type:ckeditor-plugin"
-          ]
-        }
       }
 }
