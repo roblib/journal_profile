@@ -14,7 +14,7 @@ field_name: field_issue_volume
 entity_type: node
 bundle: issue
 label: Volume
-description: 'Designate a volume taht this issue is part of. Used in citations.'
+description: 'Designate a volume that this issue is part of. Used in citations.'
 required: true
 translatable: false
 default_value: {  }
