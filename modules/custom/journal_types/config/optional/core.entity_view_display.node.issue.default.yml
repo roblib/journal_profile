@@ -1,0 +1,73 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.issue.body
+    - field.field.node.issue.field_issue_cover
+    - field.field.node.issue.field_issue_number
+    - field.field.node.issue.field_issue_open
+    - field.field.node.issue.field_issue_publication_date
+    - field.field.node.issue.field_issue_volume
+    - node.type.issue
+  module:
+    - datetime
+    - field_group
+    - image
+    - text
+    - user
+third_party_settings:
+  field_group:
+    group_identification:
+      children:
+        - field_issue_number
+        - field_issue_volume
+      parent_name: ''
+      weight: 1
+      format_type: fieldset
+      format_settings:
+        id: journal-issue-identification-fieldset
+        classes: ''
+        description: ''
+      label: Identification
+_core:
+  default_config_hash: hdV6m5TfXarfLCfNrSlLjZVhJ1p3K2raHn2Bbu4dea4
+id: node.issue.default
+targetEntityType: node
+bundle: issue
+mode: default
+content:
+  body:
+    type: text_default
+    weight: 2
+    region: content
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+  field_issue_cover:
+    type: image
+    weight: 3
+    region: content
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+  field_issue_publication_date:
+    weight: 5
+    label: above
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  links:
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_issue_number: true
+  field_issue_open: true
+  field_issue_volume: true
+  langcode: true

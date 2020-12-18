@@ -2,13 +2,12 @@ langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.toc_item
+    - core.entity_view_mode.node.teaser
     - field.field.node.journal_article.body
     - field.field.node.journal_article.field_article_dc_rights
     - field.field.node.journal_article.field_article_dc_source
     - field.field.node.journal_article.field_article_disciplines
     - field.field.node.journal_article.field_article_editor_comments
-    - field.field.node.journal_article.field_part_of
     - field.field.node.journal_article.field_article_peer_reviewed
     - field.field.node.journal_article.field_article_section
     - field.field.node.journal_article.field_article_subjects
@@ -16,55 +15,60 @@ dependencies:
     - field.field.node.journal_article.field_article_subtitle
     - field.field.node.journal_article.field_article_type
     - field.field.node.journal_article.field_authors_and_affiliations
+    - field.field.node.journal_article.field_cc_license
+    - field.field.node.journal_article.field_doi
     - field.field.node.journal_article.field_editorial_comments
+    - field.field.node.journal_article.field_featured_article
     - field.field.node.journal_article.field_journal_article_abstract
     - field.field.node.journal_article.field_journal_article_keywords
     - field.field.node.journal_article.field_publication_date_electroni
+    - field.field.node.journal_article.field_works_cited
     - node.type.journal_article
   module:
-    - journal_types
-    - media
     - text
     - user
-third_party_settings:
 _core:
-  default_config_hash: WGsgAfOj0YlUOfmFp58ZBX2Per_QmxYcTmc96_AR8vI
-id: node.journal_article.toc_item
+  default_config_hash: H9y1kfOfS5mLH3kDmge34EEvLHKjxg-c-Uq6bPMYinY
+id: node.journal_article.teaser
 targetEntityType: node
 bundle: journal_article
-mode: toc_item
+mode: teaser
 content:
-  field_article_subtitle:
-    type: text_default
-    weight: 2
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
     region: content
-    label: visually_hidden
+  content_moderation_control:
+    weight: -20
+    region: content
     settings: {  }
     third_party_settings: {  }
-  field_journal_article_abstract:
-    type: citation_field_formatter
-    weight: 4
+  links:
+    weight: 100
     region: content
-    label: hidden
-    settings:
-      style: modern_language_association_8th_edition
-      omit_title: '1'
+    settings: {  }
     third_party_settings: {  }
 hidden:
-  body: true
-  content_moderation_control: true
   field_article_dc_rights: true
   field_article_dc_source: true
   field_article_disciplines: true
   field_article_editor_comments: true
-  field_part_of: true
   field_article_peer_reviewed: true
-  field_article_section: true
   field_article_subjects: true
   field_article_submission_files: true
+  field_article_subtitle: true
   field_article_type: true
   field_authors_and_affiliations: true
+  field_cc_license: true
+  field_doi: true
   field_editorial_comments: true
+  field_featured_article: true
+  field_journal_article_abstract: true
   field_journal_article_keywords: true
   field_publication_date_electroni: true
-  links: true
+  field_works_cited: true
+  scheduled_publication: true

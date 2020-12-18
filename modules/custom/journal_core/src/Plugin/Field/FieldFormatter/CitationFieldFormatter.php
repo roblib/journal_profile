@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\journal_types\Plugin\Field\FieldFormatter;
+namespace Drupal\journal_core\Plugin\Field\FieldFormatter;
 
 use Drupal\Component\Utility\Html;
 use Drupal\Core\Field\FieldItemInterface;
@@ -14,14 +14,15 @@ use Drupal\Core\Config\ConfigFactoryInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\bibcite\CitationStylerInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
-use Drupal\journal_types\CitationTools;
+use Drupal\journal_core\CitationTools;
 
 /**
- * Plugin implementation of the 'citation_field_formatter' formatter.
+ * Plugin implementation of the 'citation' formatter.
  *
  * @FieldFormatter(
- *   id = "citation_field_formatter",
+ *   id = "citation",
  *   label = @Translation("Citation"),
+ *   description = @Translation("Format using selected citation style."),
  *   field_types = {
  *     "string",
  *     "string_long",
@@ -30,7 +31,6 @@ use Drupal\journal_types\CitationTools;
  * )
  */
 class CitationFieldFormatter extends FormatterBase implements ContainerFactoryPluginInterface {
-
 
   /**
    * The styler service.
@@ -144,7 +144,7 @@ class CitationFieldFormatter extends FormatterBase implements ContainerFactoryPl
     $entity = $item->getEntity();
     $citationTools = new CitationTools($this->entityTypeManager);
     $citation_metadata = $citationTools->getCitationMetadata($entity);
-    
+
     if ($this->getSetting('omit_title')) {
       unset($citation_metadata['title']);
     }

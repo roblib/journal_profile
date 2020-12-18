@@ -12,6 +12,7 @@ dependencies:
   - field_group
   - field_permissions
   - inline_entity_form
+  - journal_core
   - lightning_core
   - media
   - name

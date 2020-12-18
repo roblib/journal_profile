@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: journal
+label: Journal
+type: 'canonical_entities:node'
+pattern: '[node:field_journal_initials]'
+selection_criteria:
+  57396d6d-a088-40e3-ac13-590070510bd5:
+    id: node_type
+    bundles:
+      journal: journal
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 57396d6d-a088-40e3-ac13-590070510bd5
+selection_logic: and
+weight: -5
+relationships: {  }

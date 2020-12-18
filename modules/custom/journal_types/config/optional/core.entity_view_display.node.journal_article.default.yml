@@ -1,0 +1,210 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.journal_article.body
+    - field.field.node.journal_article.field_article_dc_rights
+    - field.field.node.journal_article.field_article_dc_source
+    - field.field.node.journal_article.field_article_disciplines
+    - field.field.node.journal_article.field_article_editor_comments
+    - field.field.node.journal_article.field_article_peer_reviewed
+    - field.field.node.journal_article.field_article_section
+    - field.field.node.journal_article.field_article_subjects
+    - field.field.node.journal_article.field_article_submission_files
+    - field.field.node.journal_article.field_article_subtitle
+    - field.field.node.journal_article.field_article_type
+    - field.field.node.journal_article.field_authors_and_affiliations
+    - field.field.node.journal_article.field_cc_license
+    - field.field.node.journal_article.field_doi
+    - field.field.node.journal_article.field_editorial_comments
+    - field.field.node.journal_article.field_featured_article
+    - field.field.node.journal_article.field_journal_article_abstract
+    - field.field.node.journal_article.field_journal_article_keywords
+    - field.field.node.journal_article.field_publication_date_electroni
+    - field.field.node.journal_article.field_works_cited
+    - node.type.journal_article
+  module:
+    - entity_hierarchy
+    - entity_reference_revisions
+    - field_group
+    - file
+    - link
+    - text
+    - user
+third_party_settings:
+  field_group:
+    group_article_info:
+      children:
+        - field_article_disciplines
+        - field_article_subjects
+        - field_article_dc_rights
+        - field_article_dc_source
+        - field_journal_article_keywords
+        - content_moderation_control
+      parent_name: group_article
+      weight: 15
+      format_type: accordion_item
+      format_settings:
+        formatter: closed
+        description: ''
+        classes: ''
+        id: ''
+      label: 'Article Info'
+    group_article_text:
+      children:
+        - field_journal_article_abstract
+        - body
+      parent_name: group_article
+      weight: 14
+      format_type: accordion_item
+      format_settings:
+        label: ''
+        formatter: open
+        id: ''
+        classes: ''
+      label: ''
+    group_article:
+      children:
+        - group_article_text
+        - group_article_info
+      parent_name: ''
+      weight: 6
+      format_type: accordion
+      format_settings:
+        effect: none
+        classes: ''
+        id: ''
+      label: Article
+_core:
+  default_config_hash: oW-GIKpMMEIjNPxD8t6GTqQmPKrvpHE36UWZwBk7b2w
+id: node.journal_article.default
+targetEntityType: node
+bundle: journal_article
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  content_moderation_control:
+    weight: 18
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_article_dc_rights:
+    weight: 13
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_article_dc_source:
+    weight: 14
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_article_disciplines:
+    weight: 11
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_article_peer_reviewed:
+    weight: 2
+    label: inline
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_article_section:
+    weight: 1
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_article_subjects:
+    weight: 12
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_article_submission_files:
+    weight: 9
+    label: above
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    type: file_default
+    region: content
+  field_article_subtitle:
+    weight: 0
+    label: visually_hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_authors_and_affiliations:
+    type: entity_reference_revisions_entity_view
+    weight: 5
+    region: content
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+  field_doi:
+    type: link
+    weight: 4
+    region: content
+    label: inline
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+  field_journal_article_abstract:
+    weight: 9
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_journal_article_keywords:
+    weight: 16
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  links:
+    weight: 8
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_article_editor_comments: true
+  field_article_type: true
+  field_cc_license: true
+  field_editorial_comments: true
+  field_featured_article: true
+  field_publication_date_electroni: true
+  field_works_cited: true

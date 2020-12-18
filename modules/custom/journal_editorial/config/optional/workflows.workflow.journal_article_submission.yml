@@ -1,0 +1,85 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.journal_article
+  module:
+    - content_moderation
+_core:
+  default_config_hash: IbXIWOwlHmS68a9yudO8nYqJSjUYdUCJOo2Ujw83ytI
+id: journal_article_submission
+label: 'Article Submission'
+type: content_moderation
+type_settings:
+  states:
+    draft:
+      published: false
+      default_revision: false
+      label: Submission
+      weight: -10
+    editorial_review:
+      published: false
+      default_revision: false
+      label: 'In editorial review'
+      weight: -7
+    peer_review:
+      published: false
+      default_revision: false
+      label: 'In peer review'
+      weight: -9
+    published:
+      published: true
+      default_revision: true
+      label: Published
+      weight: -6
+    with_submitter:
+      published: false
+      default_revision: false
+      label: 'With submitter'
+      weight: -8
+  transitions:
+    create_new_draft:
+      label: Submission
+      to: draft
+      weight: -10
+      from:
+        - draft
+        - editorial_review
+        - peer_review
+        - published
+    pass_peer_review:
+      label: 'Pass Peer Review'
+      from:
+        - peer_review
+      to: editorial_review
+      weight: -6
+    publish:
+      label: Publish
+      to: published
+      weight: -5
+      from:
+        - draft
+        - editorial_review
+        - peer_review
+        - published
+    respond_to_feedback:
+      label: 'Respond to feedback'
+      from:
+        - with_submitter
+      to: peer_review
+      weight: -7
+    reviewer_feedback:
+      label: 'Reviewer feedback'
+      from:
+        - peer_review
+      to: with_submitter
+      weight: -8
+    send_to_review:
+      label: 'Send to Review'
+      from:
+        - draft
+      to: peer_review
+      weight: -9
+  entity_types:
+    node:
+      - journal_article

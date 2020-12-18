@@ -1,0 +1,234 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.journal.field_journal_abbrev
+    - field.field.node.journal.field_journal_about_this
+    - field.field.node.journal.field_journal_author_guidelines
+    - field.field.node.journal.field_journal_description
+    - field.field.node.journal.field_journal_eissn
+    - field.field.node.journal.field_journal_for_authors
+    - field.field.node.journal.field_journal_for_librarins
+    - field.field.node.journal.field_journal_for_readers
+    - field.field.node.journal.field_journal_initials
+    - field.field.node.journal.field_journal_issn_print
+    - field.field.node.journal.field_journal_logo
+    - field.field.node.journal.field_journal_mailing_address
+    - field.field.node.journal.field_journal_main_image
+    - field.field.node.journal.field_journal_principal_contact
+    - field.field.node.journal.field_journal_publisher
+    - field.field.node.journal.field_journal_technical_support_
+    - node.type.journal
+  module:
+    - address
+    - field_group
+    - image
+    - text
+    - user
+third_party_settings:
+  field_group:
+    group_journal_display:
+      children:
+        - field_journal_logo
+        - group_journal_home
+        - group_journal_for_readers
+        - group_journal_for_authors
+        - group_journal_for_librarians
+        - group_contact
+      parent_name: ''
+      weight: 1
+      format_type: tabs
+      format_settings:
+        label: Information
+        direction: vertical
+        id: journal-information-tabs
+        classes: ''
+      label: Information
+    group_contact:
+      children:
+        - field_journal_mailing_address
+        - field_journal_principal_contact
+        - field_journal_technical_support_
+      parent_name: group_journal_display
+      weight: 5
+      format_type: tab
+      format_settings:
+        id: journal-display-contact-tab
+        classes: ''
+        formatter: closed
+        description: 'Contact info for this journal'
+      label: Contact
+    group_journal_home:
+      children:
+        - field_journal_abbrev
+        - field_journal_about_this
+        - field_journal_publisher
+        - field_journal_eissn
+        - field_journal_issn_print
+        - field_journal_main_image
+      parent_name: group_journal_display
+      weight: 1
+      format_type: tab
+      format_settings:
+        id: journal-home-tab
+        classes: ''
+        formatter: closed
+        description: ''
+      label: Home
+    group_journal_for_readers:
+      children:
+        - field_journal_for_readers
+      parent_name: group_journal_display
+      weight: 2
+      format_type: tab
+      format_settings:
+        id: journal-for-readers-tab
+        classes: ''
+        formatter: closed
+        description: ''
+      label: 'For Readers'
+    group_journal_for_authors:
+      children:
+        - field_journal_for_authors
+        - field_journal_author_guidelines
+      parent_name: group_journal_display
+      weight: 3
+      format_type: tab
+      format_settings:
+        id: journal-for-authors-tab
+        classes: ''
+        formatter: closed
+        description: ''
+      label: 'For Authors'
+    group_journal_for_librarians:
+      children:
+        - field_journal_for_librarins
+      parent_name: group_journal_display
+      weight: 4
+      format_type: tab
+      format_settings:
+        id: journal-for-librarians-tab
+        classes: ''
+        formatter: closed
+        description: ''
+      label: 'For Librarians'
+_core:
+  default_config_hash: arYZmgJskfdWf-RLCJYmuSgq5NWt1pcgtcSzweVV0DU
+id: node.journal.default
+targetEntityType: node
+bundle: journal
+mode: default
+content:
+  field_journal_abbrev:
+    weight: 24
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_journal_about_this:
+    weight: 25
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_journal_author_guidelines:
+    weight: 2
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_journal_eissn:
+    weight: 27
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_journal_for_authors:
+    weight: 1
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_journal_for_librarins:
+    weight: 30
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_journal_for_readers:
+    weight: 12
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_journal_issn_print:
+    weight: 28
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_journal_logo:
+    weight: 0
+    label: above
+    settings:
+      image_style: thumbnail
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_journal_mailing_address:
+    weight: 34
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: address_default
+    region: content
+  field_journal_main_image:
+    weight: 29
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_journal_principal_contact:
+    weight: 35
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_journal_publisher:
+    weight: 26
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_journal_technical_support_:
+    weight: 36
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+hidden:
+  field_journal_description: true
+  field_journal_initials: true
+  links: true
+  scheduled_publication: true

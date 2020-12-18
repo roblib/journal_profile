@@ -1,0 +1,54 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.journal.field_journal_abbrev
+    - field.field.node.journal.field_journal_about_this
+    - field.field.node.journal.field_journal_author_guidelines
+    - field.field.node.journal.field_journal_description
+    - field.field.node.journal.field_journal_eissn
+    - field.field.node.journal.field_journal_for_authors
+    - field.field.node.journal.field_journal_for_librarins
+    - field.field.node.journal.field_journal_for_readers
+    - field.field.node.journal.field_journal_initials
+    - field.field.node.journal.field_journal_issn_print
+    - field.field.node.journal.field_journal_logo
+    - field.field.node.journal.field_journal_mailing_address
+    - field.field.node.journal.field_journal_main_image
+    - field.field.node.journal.field_journal_principal_contact
+    - field.field.node.journal.field_journal_publisher
+    - field.field.node.journal.field_journal_technical_support_
+    - node.type.journal
+  module:
+    - user
+_core:
+  default_config_hash: tym0E9V_huI30V2g0R29YUl9ujNEQrx1h_7kXMwuuAw
+id: node.journal.teaser
+targetEntityType: node
+bundle: journal
+mode: teaser
+content:
+  links:
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_journal_abbrev: true
+  field_journal_about_this: true
+  field_journal_author_guidelines: true
+  field_journal_description: true
+  field_journal_eissn: true
+  field_journal_for_authors: true
+  field_journal_for_librarins: true
+  field_journal_for_readers: true
+  field_journal_initials: true
+  field_journal_issn_print: true
+  field_journal_logo: true
+  field_journal_mailing_address: true
+  field_journal_main_image: true
+  field_journal_principal_contact: true
+  field_journal_publisher: true
+  field_journal_technical_support_: true
+  scheduled_publication: true

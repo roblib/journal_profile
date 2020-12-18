@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\journal_types;
+namespace Drupal\journal_core;
 
 use Drupal\bibcite_entity\Entity\Contributor;
 
@@ -98,7 +98,7 @@ class CitationTools {
     $data['type'] = 'journal';
     return $data;
   }
-  
+
   /**
    * CitationTools constructor.
    *

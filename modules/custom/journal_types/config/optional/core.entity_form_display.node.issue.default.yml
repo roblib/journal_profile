@@ -1,0 +1,160 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.issue.body
+    - field.field.node.issue.field_issue_cover
+    - field.field.node.issue.field_issue_number
+    - field.field.node.issue.field_issue_open
+    - field.field.node.issue.field_issue_publication_date
+    - field.field.node.issue.field_issue_volume
+    - field.field.node.issue.field_part_of
+    - image.style.thumbnail
+    - node.type.issue
+  module:
+    - datetime
+    - entity_hierarchy
+    - field_group
+    - image
+    - text
+third_party_settings:
+  field_group:
+    group_issue_info:
+      children:
+        - group_basic_info
+        - group_publication_state
+      parent_name: ''
+      weight: 1
+      format_type: tabs
+      format_settings:
+        id: journal-info-tabs
+        classes: ''
+        direction: vertical
+      label: 'Issue Info'
+    group_basic_info:
+      children:
+        - group_identification
+        - body
+        - field_issue_cover
+      parent_name: group_issue_info
+      weight: 20
+      format_type: tab
+      format_settings:
+        id: journal-issue-basic-info-tab
+        classes: ''
+        formatter: open
+        description: 'Public-facing data about this issue.'
+        required_fields: true
+      label: 'Basic Info'
+    group_publication_state:
+      children:
+        - field_issue_open
+        - field_issue_publication_date
+        - status
+      parent_name: group_issue_info
+      weight: 21
+      format_type: tab
+      format_settings:
+        id: journal-issue-publicaton-state-tab
+        classes: ''
+        formatter: closed
+        description: 'Publication and technical metadata.'
+        required_fields: true
+      label: 'Publication State'
+    group_identification:
+      children:
+        - field_part_of
+        - field_issue_number
+        - field_issue_volume
+      parent_name: group_basic_info
+      weight: 2
+      format_type: fieldset
+      format_settings:
+        id: journal-issu-identification-form-fieldset
+        classes: ''
+        description: ''
+        required_fields: true
+      label: Identification
+_core:
+  default_config_hash: 1TD70uMKjooPJ5b7-zbLdB3_PsTw1i37SDRp5AcUdN8
+id: node.issue.default
+targetEntityType: node
+bundle: issue
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 3
+    region: content
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+  field_issue_cover:
+    type: image_image
+    weight: 4
+    settings:
+      preview_image_style: thumbnail
+      progress_indicator: throbber
+    region: content
+    third_party_settings: {  }
+  field_issue_number:
+    type: number
+    weight: 4
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_issue_open:
+    type: boolean_checkbox
+    weight: 4
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_issue_publication_date:
+    weight: 5
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_issue_volume:
+    weight: 5
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_part_of:
+    weight: 3
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+      hide_weight: false
+    third_party_settings: {  }
+    type: entity_reference_hierarchy_autocomplete
+    region: content
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 6
+    region: content
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  moderation_state: true
+  path: true
+  promote: true
+  sticky: true
+  uid: true

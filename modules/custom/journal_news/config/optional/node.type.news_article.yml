@@ -1,0 +1,17 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: 'News Article'
+type: news_article
+description: 'Non-peer reviewed web content.'
+help: 'This is content created for the journal web site that has not gone through peer review It does not include the technical metadata associated with scholarly content and may or may not be attached to an issue.'
+new_revision: true
+preview_mode: 1
+display_submitted: true

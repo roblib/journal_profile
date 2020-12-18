@@ -1,0 +1,30 @@
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: fyr-r-1PNzrdqnhDX0Eds5z2dYuNkpU2q7bUXBwLnuI
+id: journal_article_reviewer
+label: 'Article reviewer'
+weight: 12
+is_admin: null
+permissions:
+  - 'access comments'
+  - 'change own username'
+  - 'delete any journal_article content'
+  - 'delete own bibcite_keyword'
+  - 'edit own bibcite_keyword'
+  - 'edit own comments'
+  - 'post comments'
+  - 'skip comment approval'
+  - 'use editorial transition archive'
+  - 'use editorial transition publish'
+  - 'use editorial transition review'
+  - 'use journal_article_submission transition create_new_draft'
+  - 'use journal_article_submission transition reviewer_feedback'
+  - 'use moderation dashboard'
+  - 'use moderation sidebar'
+  - 'use text format links_only'
+  - 'use text format rich_text'
+  - 'view any unpublished content'
+  - 'view field_article_submission_files'
+  - 'view latest version'
