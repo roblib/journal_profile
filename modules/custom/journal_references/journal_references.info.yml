@@ -12,7 +12,6 @@ dependencies:
   - bibcite_endnote
   - bibcite_marc
   - bibcite_entity
-  - footnotes
   - bibcite_footnotes
   - ckeditor_blockquote_attribution
   - entity_embed

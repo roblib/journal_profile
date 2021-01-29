@@ -1,9 +1,7 @@
 langcode: en
 status: true
-dependencies:
-  module:
-    - footnotes
 name: 'Links only'
+dependencies: {  }
 format: links_only
 weight: 0
 filters:
@@ -23,10 +21,3 @@ filters:
       allowed_html: '<a href hreflang> <em> <strong>'
       filter_html_help: true
       filter_html_nofollow: false
-  filter_footnotes:
-    id: filter_footnotes
-    provider: footnotes
-    status: false
-    weight: 0
-    settings:
-      footnotes_collapse: '0'

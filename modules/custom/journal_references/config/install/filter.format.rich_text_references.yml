@@ -5,7 +5,6 @@ dependencies:
     - bibcite_footnotes
     - editor
     - entity_embed
-    - footnotes
 _core:
   default_config_hash: iHJ16aGFwRk4HRJz7IPWJWsjxrjl0R1fUXwBSop2OaI
 name: 'Rich Text with References'
@@ -88,10 +87,3 @@ filters:
       references_section_label: 'Works Cited'
       reference_dont_show_backlink_text: '1'
       reference_sort_by: alphabetical
-  filter_footnotes:
-    id: filter_footnotes
-    provider: footnotes
-    status: false
-    weight: 0
-    settings:
-      footnotes_collapse: '0'

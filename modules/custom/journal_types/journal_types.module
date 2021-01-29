@@ -6,7 +6,7 @@
  */
 
 use Drupal\Core\Routing\RouteMatchInterface;
-use Drupal\journal_types\CitationTools;
+use Drupal\journal_core\CitationTools;
 use Drupal\pathauto\Entity\PathautoPattern;
 /**
  * Implements hook_help().
