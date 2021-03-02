@@ -11,11 +11,16 @@ dependencies:
     - field.field.node.issue.field_issue_volume
     - field.field.node.issue.field_part_of
     - node.type.issue
+    - views.view.issue_table_of_contents
   module:
     - field_group
     - image
+    - layout_builder
+    - layout_builder_restrictions
+    - layout_library
     - text
     - user
+    - views
 third_party_settings:
   field_group:
     group_identification:
@@ -30,8 +35,83 @@ third_party_settings:
         classes: ''
         description: ''
       label: Identification
+      region: hidden
+  layout_builder:
+    allow_custom: false
+    enabled: true
+    sections:
+      -
+        layout_id: layout_twocol_section
+        layout_settings:
+          label: ''
+          column_widths: 33-67
+        components:
+          68f5247c-31e2-43e0-94be-fda481e12735:
+            uuid: 68f5247c-31e2-43e0-94be-fda481e12735
+            region: first
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:issue:field_issue_cover'
+              formatter:
+                type: image
+                label: above
+                settings:
+                  image_style: ''
+                  image_link: ''
+                third_party_settings: {  }
+            additional: {  }
+            weight: 2
+          f6022fd2-d540-45b6-b6da-acfd46b47f55:
+            uuid: f6022fd2-d540-45b6-b6da-acfd46b47f55
+            region: first
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'extra_field_block:node:issue:links'
+            additional: {  }
+            weight: 1
+          7fc4958c-7922-4eb3-be71-27e195fe7e46:
+            uuid: 7fc4958c-7922-4eb3-be71-27e195fe7e46
+            region: first
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:issue:body'
+              formatter:
+                type: text_default
+                label: above
+                settings: {  }
+                third_party_settings: {  }
+            additional: {  }
+            weight: 0
+          eb7c715e-5d7e-47c3-8474-3db03d0c1170:
+            uuid: eb7c715e-5d7e-47c3-8474-3db03d0c1170
+            region: second
+            configuration:
+              id: 'views_block:issue_table_of_contents-block_1'
+              label: ''
+              provider: views
+              label_display: visible
+              views_label: ''
+              items_per_page: none
+              context_mapping: {  }
+            additional: {  }
+            weight: 0
+        third_party_settings: {  }
+  layout_library:
+    enable: false
+  layout_builder_restrictions:
+    allowed_block_categories: {  }
+    entity_view_mode_restriction:
+      whitelisted_blocks: {  }
+      blacklisted_blocks: {  }
+      allowed_layouts: {  }
 _core:
-  default_config_hash: UdxLRFarJJjUsnmWnFMO9xlciEMWSfqBwNMaZzo95-g
+  default_config_hash: rgyfUpX-W3Do3v2FF52xXmcs9YFbG1a19OQcmr1yqyo
 id: node.issue.full
 targetEntityType: node
 bundle: issue
@@ -64,3 +144,4 @@ hidden:
   field_issue_publication_date: true
   field_issue_volume: true
   field_part_of: true
+  search_api_excerpt: true

@@ -13,6 +13,8 @@ dependencies:
   - field_permissions
   - inline_entity_form
   - journal_core
+  - layout_builder_restrictions
+  - layout_library
   - lightning_core
   - media
   - name
