@@ -46,23 +46,6 @@ third_party_settings:
           label: ''
           column_widths: 33-67
         components:
-          68f5247c-31e2-43e0-94be-fda481e12735:
-            uuid: 68f5247c-31e2-43e0-94be-fda481e12735
-            region: first
-            configuration:
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              id: 'field_block:node:issue:field_issue_cover'
-              formatter:
-                type: image
-                label: above
-                settings:
-                  image_style: ''
-                  image_link: ''
-                third_party_settings: {  }
-            additional: {  }
-            weight: 2
           f6022fd2-d540-45b6-b6da-acfd46b47f55:
             uuid: f6022fd2-d540-45b6-b6da-acfd46b47f55
             region: first
@@ -72,7 +55,7 @@ third_party_settings:
                 entity: layout_builder.entity
               id: 'extra_field_block:node:issue:links'
             additional: {  }
-            weight: 1
+            weight: 3
           7fc4958c-7922-4eb3-be71-27e195fe7e46:
             uuid: 7fc4958c-7922-4eb3-be71-27e195fe7e46
             region: first
@@ -87,7 +70,7 @@ third_party_settings:
                 settings: {  }
                 third_party_settings: {  }
             additional: {  }
-            weight: 0
+            weight: 2
           eb7c715e-5d7e-47c3-8474-3db03d0c1170:
             uuid: eb7c715e-5d7e-47c3-8474-3db03d0c1170
             region: second
@@ -101,6 +84,26 @@ third_party_settings:
               context_mapping: {  }
             additional: {  }
             weight: 0
+          0a90a66d-ef8c-4704-b5d8-26d66af4cfa7:
+            uuid: 0a90a66d-ef8c-4704-b5d8-26d66af4cfa7
+            region: first
+            configuration:
+              id: 'field_block:node:issue:field_issue_cover'
+              label: Cover
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: image
+                settings:
+                  image_style: medium
+                  image_link: ''
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: 1
         third_party_settings: {  }
   layout_library:
     enable: false
@@ -111,7 +114,7 @@ third_party_settings:
       blacklisted_blocks: {  }
       allowed_layouts: {  }
 _core:
-  default_config_hash: rgyfUpX-W3Do3v2FF52xXmcs9YFbG1a19OQcmr1yqyo
+  default_config_hash: qCvwhwo3NvLhpDlh_-_WRT6yO4-edet4kEzwIwHhoCY
 id: node.issue.full
 targetEntityType: node
 bundle: issue
