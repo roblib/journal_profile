@@ -55,7 +55,7 @@ third_party_settings:
                 entity: layout_builder.entity
               id: 'extra_field_block:node:issue:links'
             additional: {  }
-            weight: 3
+            weight: 4
           7fc4958c-7922-4eb3-be71-27e195fe7e46:
             uuid: 7fc4958c-7922-4eb3-be71-27e195fe7e46
             region: first
@@ -70,7 +70,7 @@ third_party_settings:
                 settings: {  }
                 third_party_settings: {  }
             additional: {  }
-            weight: 2
+            weight: 3
           eb7c715e-5d7e-47c3-8474-3db03d0c1170:
             uuid: eb7c715e-5d7e-47c3-8474-3db03d0c1170
             region: second
@@ -98,6 +98,26 @@ third_party_settings:
                 settings:
                   image_style: medium
                   image_link: ''
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: 2
+          71fe41de-c1f2-4622-9701-dba3dbc29650:
+            uuid: 71fe41de-c1f2-4622-9701-dba3dbc29650
+            region: first
+            configuration:
+              id: 'field_block:node:issue:title'
+              label: 'Issue Citation'
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: journal_citation
+                settings:
+                  style: apa
+                  omit_title: 1
                 third_party_settings: {  }
               context_mapping:
                 entity: layout_builder.entity
