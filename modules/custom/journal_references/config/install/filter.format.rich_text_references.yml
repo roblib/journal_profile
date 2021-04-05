@@ -1,12 +1,18 @@
 langcode: en
 status: true
 dependencies:
+  config:
+    - core.entity_view_mode.media.embedded
+    - core.entity_view_mode.media.slick
+    - core.entity_view_mode.media.slideshow
+    - core.entity_view_mode.media.thumbnail
   module:
     - bibcite_footnotes
     - editor
     - entity_embed
+    - media
 _core:
-  default_config_hash: iHJ16aGFwRk4HRJz7IPWJWsjxrjl0R1fUXwBSop2OaI
+  default_config_hash: J4ZbrrEtTo1VVxIMFwO8BDRxtYobvGyJoXBw2clOKWg
 name: 'Rich Text with References'
 format: rich_text_references
 weight: -11
@@ -47,7 +53,7 @@ filters:
     status: true
     weight: -49
     settings:
-      allowed_html: '<a class href hreflang id title> <em> <strong> <cite> <blockquote cite> <code> <ul class id type> <ol class id start type> <li class id> <dl> <dt> <dd> <h2 class id> <h3 class id> <h4 class id> <h5 class id> <h6 class id> <s> <sup> <sub> <img src alt data-entity-type data-entity-uuid data-align data-caption> <table> <caption> <tbody> <thead> <tfoot> <th> <td> <tr> <hr> <p> <br> <h1> <pre> <drupal-entity data-* title alt> <fn id value page reference> <div class id> <span class id> <figure class> <figcaption class>'
+      allowed_html: '<a class href hreflang id title> <em> <strong> <cite> <blockquote cite> <code> <drupal-media data-entity-type data-entity-uuid> <ul class id type> <ol class id start type> <li class id> <dl> <dt> <dd> <h2 class id> <h3 class id> <h4 class id> <h5 class id> <h6 class id> <s> <sup> <sub> <img src alt data-entity-type data-entity-uuid data-align data-caption> <table> <caption> <tbody> <thead> <tfoot> <th> <td> <tr> <hr> <p> <br> <h1> <pre> <drupal-entity data-* title alt> <fn id value page reference> <div class id> <span class id> <figure class> <figcaption class>'
       filter_html_help: true
       filter_html_nofollow: false
   filter_autop:
@@ -84,6 +90,18 @@ filters:
       footnotes_collapse: '1'
       footnotes_ibid: '0'
       notes_section_label: Notes
-      references_section_label: 'Works Cited'
       reference_dont_show_backlink_text: '1'
-      reference_sort_by: alphabetical
+      works_cited_sort_by: weight
+  media_embed:
+    id: media_embed
+    provider: media
+    status: true
+    weight: 100
+    settings:
+      default_view_mode: embedded
+      allowed_media_types: {  }
+      allowed_view_modes:
+        embedded: embedded
+        slick: slick
+        slideshow: slideshow
+        thumbnail: thumbnail

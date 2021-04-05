@@ -6,7 +6,7 @@ dependencies:
   module:
     - ckeditor
 _core:
-  default_config_hash: VcTIWimn2gjjIeXeNlksgzleqMPYHTBGTIzvNJ9Tu_0
+  default_config_hash: TBBDGIAzZt_It7wJbJxdZytxEZq9T7t0olzOxwgh28E
 format: rich_text_references
 editor: ckeditor
 settings:
@@ -40,7 +40,7 @@ settings:
         -
           name: Media
           items:
-            - entity_browser
+            - DrupalMediaLibrary
             - Blockquote
             - blockquote_attribution
         -
